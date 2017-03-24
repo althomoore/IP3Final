@@ -1,1 +1,17 @@
-INTEGRATED PROJECT 3
+<form action="PHP/createFile.php" method="get" id="searchForm">
+
+    <div class="label-text">Document Title:</div>
+    <input type="text" id="filename" placeholder="Filename" name="filename" required/>
+
+    <label>
+        <select name="extension">
+            <option value=".doc">.doc</option>
+            <option value=".xlsx">.xlsx</option>
+            <option value=".gdoc">.gdoc</option>
+            <option value=".txt">.txt</option>
+        </select>
+    </label>
+
+    <button class="btn large primary" value="Search" id="search-go">Create File</button>
+
+</form>
