@@ -114,11 +114,12 @@
                     </label>
 
                     <button class="btn large primary" value="Search" id="search-go">Create File</button>
+                    
 
                 </form>
 
             </div>
-            </aadiv>
+        </div>
         </div>
 
         <div id="dummy" class="modal">

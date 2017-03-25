@@ -4,5 +4,8 @@
 
 $name = $_GET['filename'];
 $extn = $_GET['extension'];
+$dire = '../testdirectory/';
 
-$file = fopen('../testdirectory/' . $name . $extn, 'w');
+$file = fopen($dire . $name . $extn, 'w');
+
+header('location: ../index.php');

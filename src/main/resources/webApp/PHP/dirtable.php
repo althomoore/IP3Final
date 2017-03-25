@@ -5,9 +5,10 @@
         <th>DOCUMENT TITLE</th>
         <th>OWNER</th>
         <th>ACTIVE DATE</th>
-        <th>Modified Date</th>
+        <th>MODIFIED DATE</th>
         <th>EDIT</th>
         <th>DOWNLOAD</th>
+        <th>REMOVE FILE</th>
 
     </tr>
     </thead>
@@ -15,7 +16,7 @@
     <?php
 
     // Opens directory
-    $myDirectory=opendir(".");
+    $myDirectory = opendir("./testdirectory/");
 
     // Gets each entry
     while($entryName=readdir($myDirectory)) {
@@ -75,6 +76,7 @@
             $modtime=date("j M Y g:i A", filemtime($dirArray[$index]));
             $timekey=date("YmdHis", filemtime($dirArray[$index]));
 
+
             // Prettifies File Types, add more to suit your needs.
             switch ($extn){
                 case "txt": $extn="Text File"; break;
@@ -99,19 +101,26 @@
             if($name=="."){$name=". (Current Directory)"; $extn="&lt;System Dir&gt;";}
             if($name==".."){$name=".. (Parent Directory)"; $extn="&lt;System Dir&gt;";}
 
+
             // Print 'em
             print("
-          <tr class='$class'>
-            <td><a href='./$namehref'>$name</a></td>
+<form action='./deleteFile.php' method='get'>
+          <tr class='$class' id='delete'>
+            <td>$name</td>
             
-            <td><a href='./$namehref'>$author</a></td>
+            <td>$author</td>
             
-            <td sorttable_customkey='$timekey'><a href='./$namehref'>$createtime</td>
+            <td>$createtime</td>
             
-            <td sorttable_customkey='$createtimekey'><a href='./$namehref'>$modtime</a></td>
-            <td><button>EDIT</button></td>
-            <td><button>DOWNLOAD</button></td>
-          </tr>");
+            <td>$modtime</td>
+            
+            <td><button class='btn small secondary'>EDIT</button></td>
+            <td><button class='btn small primary'><a href='./testdirectory/$namehref'>DOWNLOAD</a></button></td>
+            
+            <td><button class='btn small secondary'>DELETE</button> </td>
+            
+          </tr>
+          </form>");
         }
     }
     ?>
