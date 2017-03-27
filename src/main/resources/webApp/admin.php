@@ -76,16 +76,16 @@
 
                 <table id="mainTable">
                     <thead>
+                        <td>User Id</td>
                         <td>Username</td>
-                        <td>User Role</td>
-                        <td>Delete User?</td>
+                        <td>Delete</td>
                     </thead>
 
                     <?php
         define("DB_USER", "root");
         define("DB_PASS", "");
         $servername = "localhost";
-        $dbname = "ip3";
+        $dbname = "mydb";
     
         try {
             $conn=new PDO("mysql:host=$servername;dbname=$dbname",DB_USER, DB_PASS);
@@ -94,12 +94,12 @@
         } catch(PDOException $e) {
             echo "Connection Failed: " . $e -> getMessage();
         }
-        $query= 'SELECT * FROM Users';
+        $query= 'SELECT * FROM user';
         foreach ($conn->query($query) as $row) {
             echo "
                 <tr id=" . "tableRow" . $row['id'] . " >
+                    <td> " . $row['id'] . " </td>
                     <td> " . $row['username'] . " </td>
-                    <td> " . $row['role_id'] . " </td>
                     <td><a href=\"delete.php?userId=".$row['id']."\">Delete</a></td>
                 </tr>
             ";

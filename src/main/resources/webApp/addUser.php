@@ -13,7 +13,7 @@
     define("DB_USER", "root");
         define("DB_PASS", "");
         $servername = "localhost";
-        $dbname = "ip3";
+        $dbname = "mydb";
     
         try {
             $conn=new PDO("mysql:host=$servername;dbname=$dbname",DB_USER, DB_PASS);
@@ -28,9 +28,8 @@
     $userEmail = $_POST['email'];
     $userUserName = $_POST['username'];
     $userPassword = $_POST['password'];
-    $userRole = $_POST['roleId'];
     
-    $query=$conn->prepare("INSERT INTO Users VALUES('','$userName','$userSurname','$userEmail','$userUserName','$userPassword','$userRole')");
+    $query=$conn->prepare("INSERT INTO user VALUES('','$userName','$userSurname','$userEmail','$userUserName','$userPassword','1','1','')");
     $query->execute();
     $conn = null;
     header('Location: ./admin.php');

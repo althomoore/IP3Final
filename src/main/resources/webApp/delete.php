@@ -13,7 +13,7 @@
     define("DB_USER", "root");
         define("DB_PASS", "");
         $servername = "localhost";
-        $dbname = "ip3";
+        $dbname = "mydb";
     
         try {
             $conn=new PDO("mysql:host=$servername;dbname=$dbname",DB_USER, DB_PASS);
@@ -25,7 +25,7 @@
     
     $id = (int)$_GET['id'];
     
-    $query = $conn->prepare("DELETE FROM Users WHERE id = " . $id);
+    $query = $conn->prepare("DELETE FROM user WHERE id = " . $id);
     $query->execute();
     $conn = null;
     header('Location: ./admin.php');
