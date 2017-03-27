@@ -17,6 +17,7 @@
 
     // Opens directory
     $myDirectory = opendir("./testdirectory/");
+//    $myDirectory = opendir(".");
 
     // Gets each entry
     while($entryName=readdir($myDirectory)) {
