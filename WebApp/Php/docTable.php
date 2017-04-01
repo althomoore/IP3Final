@@ -1,6 +1,6 @@
-<br>
-<br>
-<br>
+<?php 
+    echo "<h4 style='padding-left: 20px;'> Welcome back, " . $_SESSION['username'] . "</h4>";
+?>
 <label>
     <input type="text" id="myInput" onkeyup="searchTable()">
     <div class="label-text">Search</div>
@@ -31,10 +31,6 @@
         } catch(PDOException $e) {
             echo "Connection Failed: <br />" . $e -> getMessage();
         }
-        
-        echo $_SESSION['username'];
-        //$username = $_SESSION['username'];
-        $username = "testUser";
         
         $query= "SELECT document.id, user.username, document.name, document.Comment FROM document INNER JOIN user ON document.Author_id=user.Author_id WHERE user.username='{$_SESSION['username']}'";
         

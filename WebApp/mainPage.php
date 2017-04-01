@@ -143,11 +143,18 @@
             tr = table.getElementsByTagName("tr");
 
             for (i = 0; i < tr.length; i++) {
+                id = tr[i].getElementsByTagName("td")[0];
                 td = tr[i].getElementsByTagName("td")[1];
                 td2 = tr[i].getElementsByTagName("td")[2];
+                td3 = tr[i].getElementsByTagName("td")[3];
 
-                if (td || td2) {
-                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1 || td2.innerHTML.toUpperCase().indexOf(filter) > -1)
+                if (id || td || td2 || td3) {
+                    if (
+                        id.innerHTML.toUpperCase().indexOf(filter) > -1 ||
+                        td.innerHTML.toUpperCase().indexOf(filter) > -1 || 
+                        td2.innerHTML.toUpperCase().indexOf(filter) > -1 ||
+                        td3.innerHTML.toUpperCase().indexOf(filter) > -1
+                       )
                     {
                         tr[i].style.display = "";
                     } else {
