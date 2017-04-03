@@ -20,7 +20,7 @@
         
         echo "All data has been recieved from the form";
         
-        $query=$conn->prepare("INSERT INTO document VALUES('','$authorId','$docTitle','','','$comment','$fileURL')");
+        $query=$conn->prepare("INSERT INTO document VALUES('','$authorId','$docTitle','$comment','$fileURL','','')");
         echo "Executing query...";
         $query->execute();
         echo "Query completed, data entered to database";

@@ -32,7 +32,7 @@
             echo "Connection Failed: <br />" . $e -> getMessage();
         }
         
-        $query= "SELECT document.id, user.username, document.name, document.Comment FROM document INNER JOIN user ON document.Author_id=user.Author_id WHERE user.username='{$_SESSION['username']}'";
+        $query= "SELECT document.id, user.username, document.name, document.Comment FROM document INNER JOIN user ON document.Author_id=user.id WHERE user.username='{$_SESSION['username']}'";
         
         foreach ($conn->query($query) as $row) {
             echo "

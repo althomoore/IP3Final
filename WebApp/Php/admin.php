@@ -100,10 +100,10 @@
         $query= 'SELECT * FROM user';
         foreach ($conn->query($query) as $row) {
             echo "
-                <tr id=" . "tableRow" . $row['Author_id'] . " >
-                    <td> " . $row['Author_id'] . " </td>
+                <tr id=" . "tableRow" . $row['id'] . " >
+                    <td> " . $row['id'] . " </td>
                     <td> " . $row['username'] . " </td>
-                    <td><button class='btn small primary'><a class ='buttonAnchor' href=\"delete.php?Author_id=".$row['Author_id']."\">Delete</a></button></td>
+                    <td><button class='btn small primary'><a class ='buttonAnchor' href=\"delete.php?Author_id=".$row['id']."\">Delete</a></button></td>
                 </tr>
             ";
         }
