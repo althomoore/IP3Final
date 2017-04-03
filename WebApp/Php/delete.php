@@ -23,9 +23,9 @@
             echo "Connection Failed: " . $e -> getMessage();
         }
     
-    $Author_id = (int)$_GET['Author_id'];
+    $Author_id = (int)$_GET['id'];
     
-    $query = $conn->prepare("DELETE FROM user WHERE Author_id = " . $Author_id);
+    $query = $conn->prepare("DELETE FROM user WHERE id = " . $Author_id);
     $query->execute();
     $conn = null;
     header('Location: ./admin.php');

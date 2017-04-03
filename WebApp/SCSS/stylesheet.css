@@ -212,7 +212,7 @@ nav {
 section {
     float: left;
     width: 75%;
-    padding-bottom: 20px;
+    padding: 20px;
 }
 
 
@@ -368,7 +368,7 @@ div.usernameimage {
 /* line 13, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/stylesheet.scss */
 
 body {
-    padding: 0px;
+    padding: 0;
     margin: 10px;
 }
 
@@ -396,7 +396,7 @@ body {
 
 .btnArrow {
     color: #fff !important;
-    padding-right: 0px !important;
+    padding-right: 0 !important;
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */

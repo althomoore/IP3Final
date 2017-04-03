@@ -58,10 +58,7 @@
                         <input type="password" name="password" id="password" required>
                         <div class="label-text">Password:</div>
                     </label>
-                    <label>
-                        <input type="text" name="roleId" id="roleId" required>
-                        <div class="label-text">Role Id:</div>
-                    </label>
+
 
                     <input type="submit" class="btn large primary" value="Add User" name="submit" id="submit">
                 </form>
@@ -79,9 +76,10 @@
 
                 <table id="mainTable">
                     <thead>
-                        <td>User Id</td>
-                        <td>Username</td>
-                        <td>Delete</td>
+                        <th>User Id</th>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Delete</th>
                     </thead>
 
                     <?php
@@ -93,7 +91,6 @@
         try {
             $conn=new PDO("mysql:host=$servername;dbname=$dbname",DB_USER, DB_PASS);
             $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo DB_USER . " is connected to " . $dbname;
         } catch(PDOException $e) {
             echo "Connection Failed: " . $e -> getMessage();
         }
@@ -102,6 +99,7 @@
             echo "
                 <tr id=" . "tableRow" . $row['id'] . " >
                     <td> " . $row['id'] . " </td>
+                    <td> " . $row['forename'], ' ', $row['surname'] . "</td>
                     <td> " . $row['username'] . " </td>
                     <td><button class='btn small primary'><a class ='buttonAnchor' href=\"delete.php?Author_id=".$row['id']."\">Delete</a></button></td>
                 </tr>

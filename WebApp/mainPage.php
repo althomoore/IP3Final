@@ -44,7 +44,7 @@
                 <div class="username">
                     <?php 
                     session_start();
-                    echo "<h3>" . $_SESSION["username"] . "</h3>";
+                    echo "<h3>" . $_SESSION["forename"] . "</h3>";
                     ?>
                 </div>
             </div>
@@ -58,17 +58,17 @@
                     <div class="tasks1">
                         <a class="textpad1">5</a>
                         <br/>
-                        <a class="textpad">Overdue</a>
+                        <a class="textpad">Draft</a>
                     </div>
                     <div class="tasks2">
                         <a class="textpad1">0</a>
                         <br/>
-                        <a class="textpad">This Week</a>
+                        <a class="textpad">Active</a>
                     </div>
                     <div class="tasks3">
                         <a class="textpad1">7</a>
                         <br/>
-                        <a class="textpad">Outstanding</a>
+                        <a class="textpad">Distributee</a>
                     </div>
                 </div>
 
@@ -78,22 +78,25 @@
                             <a href="mainPage.php"><img src="./Images/Home.svg">Home</a>
                         </li>
                         <li>
-                            <a href="#" id="myBtn"><i class="fa fa-2x fa-plus"></i> Add Document</a>
+                            <a href="#" id="myBtn"><i class="fa fa-2x fa-plus"></i>Add Document</a>
                         </li>
                         <li>
                             <a href="https://www.ideagen.com/contact-us/"><img src="./Images/Contact.svg">Contact</a>
                         </li>
                         <li>
-                            <a href="./Php/admin.php"><i class="fa fa-2x fa-id-badge"></i> Admin</a>
+                            <a href="./Php/admin.php"><i class="fa fa-2x fa-id-badge"></i>Admin</a>
                         </li>
                         <li>
-                            <a href="./index.php"><i class="fa fa-2x fa-sign-out"></i> Log Out</a>
+                            <a href="./index.php"><i class="fa fa-2x fa-sign-out"></i>Log Out</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-       
+
+        <header>
+
+        </header>
         <section>
             <?php include 'Php/docTable.php'; ?>
         </section>
