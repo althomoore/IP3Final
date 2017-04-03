@@ -10,7 +10,7 @@
             $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //echo DB_USER . " is connected to " . $dbname;
         } catch(PDOException $e) {
-            echo "Connection Failed: " . $e -> getMessage();
+            //echo "Connection Failed: " . $e -> getMessage();
         }
 
         $docTitle = $_POST['docTitle'];
@@ -20,7 +20,7 @@
         
         echo "All data has been recieved from the form";
         
-        $query=$conn->prepare("INSERT INTO document VALUES('','$authorId','$docTitle','$comment','$fileURL','','')");
+        $query=$conn->prepare("INSERT INTO document VALUES('','$authorId','$docTitle','$comment','$fileURL','draft','','')");
         echo "Executing query...";
         $query->execute();
         echo "Query completed, data entered to database";

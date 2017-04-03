@@ -32,13 +32,19 @@
     $userUsername = $_POST['username'];
     $_SESSION["username"] = $userUsername;
     $userPassword = $_POST['password_hash'];
-    $_SESSION["password"] = $userPassword; 
+    $_SESSION["password"] = $userPassword;
+    
+    $getUsername=("SELECT forename FROM user WHERE username='$userUsername'");
+            foreach ($conn->query($getUsername) as $row) {
+                $_SESSION['forename'] = $row['forename'];
+                echo "Name: " . $row['forename'];
+            }
     
     $query=("SELECT * FROM user WHERE '$userUsername' = username AND '$userPassword' = password_hash");
     
     foreach ($conn->query($query) as $row) {
         if($userUsername = 'username' and $userPassword = 'password_hash') 
-        {
+        {                    
             header('Location: ../mainPage.php');
         }
         else 

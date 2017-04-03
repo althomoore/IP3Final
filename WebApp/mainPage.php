@@ -75,7 +75,7 @@
                 <div class="tools">
                     <ul>
                         <li>
-                            <a href="index.html"><img src="./Images/Home.svg">Home</a>
+                            <a href="mainPage.php"><img src="./Images/Home.svg">Home</a>
                         </li>
                         <li>
                             <a href="#" id="myBtn"><i class="fa fa-2x fa-plus"></i> Add Document</a>

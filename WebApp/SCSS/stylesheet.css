@@ -427,6 +427,8 @@ th {
     color: #222E32;
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
+    vertical-align: center;
+    text-align: center !important;
 }
 
 tr {
@@ -437,10 +439,8 @@ tr {
     border: 1px solid #E7EAEC;
 }
 
-td,
-th {
-    text-align: left;
-    padding-left: 30px;
+td {
+    text-align: center;
 }
 
 td a {
@@ -488,6 +488,24 @@ select {
     color: #43525B;
     padding-left: 15px;
     padding-right: 20px;
+}
+
+.fa-pencil-square-o, .fa-download, .fa-trash {
+    padding: 0;
+    vertical-align: middle;
+    color: #18aee0;
+}
+
+.fa-download {
+    color: #fff;
+}
+
+.fa-trash {
+    color: #c61c18;
+}
+
+.deleteDoc {
+    color: #18aee0;
 }
 
 .sub-container {
