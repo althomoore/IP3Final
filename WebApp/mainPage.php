@@ -98,6 +98,14 @@
             <?php include 'Php/docTable.php'; ?>
         </section>
 
+        <div id="distributeeModal" class="modal">
+            <div class="modal-content">
+                <span class="close">x</span>
+                <p>Some text in the Modal..</p>
+            </div>
+
+        </div>
+
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
@@ -134,7 +142,27 @@
         <script type="text/javascript" src="Javascript/modal.js"></script>
     </div>
 
+
     <script>
+
+        var modal = document.getElementById('distributeeModal');
+        var btn = document.getElementById('distributeeButton')
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
         function searchTable() {
             var input, filter, table, tr, td, i;
             input = document.getElementById("myInput");

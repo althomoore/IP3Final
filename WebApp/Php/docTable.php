@@ -1,11 +1,12 @@
-<?php 
+
+<?php
     echo "<h4 style='padding-left: 20px;'> Welcome back, " . $_SESSION['forename'] . "</h4>";
 ?>
 <label>
     <input type="text" id="myInput" onkeyup="searchTable()">
     <div class="label-text">Search</div>
 </label>
-<h3>Author</h3>
+<h3>Documents where you are Author</h3>
 <table id="mainTable">
     <thead>
         <tr>
@@ -22,6 +23,7 @@
         </tr>
     </thead>
     <tbody>
+
 
         <?php
         
@@ -62,6 +64,10 @@
                     <td> " . "<button class='btn small secondary'>
                                 <a class='deleteDoc' href=\"Php/activateDoc.php?documentId=" . $row['id'] . "\"> Activate</a>
                              </button>" . " </td>
+                    <td> " . "<button class='btn small secondary'>
+                                <a class='addDistributee' href=\"Php/addDistributee.php?documentId=" . $row['id'] . "\"> AddDistributee  
+                                <i class='fa fa-pencil-square-o'></i></a>
+                             </button>" . " </td>
                 </tr>
             ";
         }
@@ -71,15 +77,18 @@
 </table>
 
 
+
 </br>
 </br>
 </br>
-<label>
+
+
+<!-- <label>
     <input type="text" id="myInput" onkeyup="searchTable()">
     <div class="label-text">Search</div>
-</label>
+</label> -->
 
-<h3>Distrebutees</h3>
+<h3>Documents where you are a Distributee</h3>
 <table id="mainTable">
     <thead>
     <tr>
@@ -93,6 +102,7 @@
         <th>Download</th>
         <th>Delete</th>
         <th>Activate</th>
+
     </tr>
     </thead>
     <tbody>
@@ -146,3 +156,45 @@ WHERE (user.username='{$_SESSION['username']}' AND (document.status = 'active' O
     ?>
     </tbody>
 </table>
+
+<div id="distributeeModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Add Distributee</h2>
+        </div>
+        <div class="modal-body">
+            <form action="Php/addDistributee.php" method="post">
+                <label>
+                    <input type="text" name="documentId" id="documentId" required>
+                    <div class="label-text">Document ID:</div>
+                </label>
+                <label>
+                    <input type="text" name="userId" id="userId" required>
+                    <div class="label-text">User ID:</div>
+                </label>
+                <input type="submit" class="btn large primary" value="Add Distributee" name="submit" id="submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    var modal = document.getElementById('distributeeModal');
+    var btn = document.getElementById('distributeeButton')
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
