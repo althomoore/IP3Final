@@ -9,7 +9,7 @@ echo "<h4 style='padding-left: 20px;'> Welcome back, " . $_SESSION['forename'] .
 <table id="mainTable">
     <thead>
     <tr>
-        <th>Id</th>
+        <th style="width: 50px;">Id</tha>
         <th>Title</th>
         <th>Revision</th>
         <th>Author</th>
@@ -25,18 +25,6 @@ echo "<h4 style='padding-left: 20px;'> Welcome back, " . $_SESSION['forename'] .
 
     <?php
 
-    define("DB_USER", "root");
-    define("DB_PASS", "");
-    $servername = "localhost";
-    $dbname = "mydb";
-
-    try {
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", DB_USER, DB_PASS);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        //echo DB_USER . " is connected to " . $dbname;
-    } catch (PDOException $e) {
-        echo "Connection Failed: <br />" . $e->getMessage();
-    }
 
     $query = "SELECT document.id, user.username, document.name, document.comment, document.status FROM document INNER JOIN user ON document.Author_id=user. id WHERE (user.username='{$_SESSION['username']}' AND (document.status = 'active' OR document.status = 'draft'))";
 

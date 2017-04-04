@@ -225,7 +225,6 @@ ul {
     overflow: hidden;
 }
 
-
 /* line 18, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_navigation.scss */
 
 li a {
@@ -413,7 +412,7 @@ body {
     border-collapse: collapse;
     width: 100%;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
-    transition: box-shadow 0.2s cubic-bezier(.55, 0, .1, 1);
+    transition: box-shadow 0.4s cubic-bezier(.55, 0, .1, 1);
 }
 
 .noShadow {
@@ -426,8 +425,7 @@ th {
     height: 40px;
     color: #222E32;
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    vertical-align: center;
+    font-size: 14px;
     text-align: center !important;
 }
 

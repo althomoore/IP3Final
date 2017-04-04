@@ -25,7 +25,7 @@
         <button id="myBtn" class="btn primary medium">Add User</button>
     </section>
     <section>
-        <h2>Show/ Delete Users</h2>
+        <h2>Show/Delete Users</h2>
         <p>Click the button to open a dialog showing a list of all users and their roles. Click the delete button next to a user to remove them from the database.</p>
         <button id="userListBtn" class="btn primary medium">Show Users</button>
     </section>
@@ -34,7 +34,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close">&times;</span>
-                <h2>Add New User</h2>
+                <h3>Add New User</h3>
             </div>
             <div class="modal-body">
                 <form action="addUser.php" method="post">
@@ -70,7 +70,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close">&times;</span>
-                <h2>User List</h2>
+                <h3>User List</h3>
             </div>
             <div class="modal-body">
 
