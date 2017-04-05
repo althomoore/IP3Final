@@ -2,27 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Add Distributee</title>
 
-    <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="SCSS/stylesheet.css">
-    <link rel="stylesheet" href="SCSS/partials/modal.css">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
-    <link rel="stylesheet" href="SCSS/partials/sideNav.css">
-    <link rel="stylesheet" href="SCSS/partials/testing.css">
-
-    <link rel="javascript" href="Javascript/javascript.js">
-
-    <script type="text/javascript" src="https://use.fontawesome.com/2f9bccd1c4.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-    <script type="text/javascript" src="Javascript/dropdown.js"></script>
-    <script type="text/javascript" src="Javascript/sideNav.js"></script>
 </head>
 
 <body>
@@ -31,14 +11,13 @@
     <thead>
     <td>User Id</td>
     <td>Username</td>
-    <td>Delete</td>
     </thead>
 
 <form id='Select User' method='post'
       accept-charset='UTF-8'>
     <label for='userId' >UserId*:</label>
     <input type='text' name='userId' id='userId' maxlength="30" />
-    <input type='submit' name='Submit' value='Submit' />
+    <input type='submit' name='submit' value='Submit' />
 </form>
 </body>
 
@@ -61,6 +40,8 @@ try {
 }
 
 
+
+
 $query= 'SELECT * FROM user';
 foreach ($conn->query($query) as $row) {
     echo "
@@ -76,14 +57,20 @@ foreach ($conn->query($query) as $row) {
 //$documentId = $_POST['documentId']
 //$userId = $_POST['userId']
 
-$documentId = (int)$_GET['documentId'];
-$userId = $_POST['userId'];
-$query=$conn->prepare("INSERT INTO distributee_access VALUES('$documentId','$userId')");
-echo "Executing query...";
-$query->execute();
-echo "Query completed, data entered to database";
-$conn = null;
-echo "Add a distributee for document: " . $documentId . "<br>";
+
+
+
+If($_POST){
+    $documentId = (int)$_GET['documentId'];
+    $userId = $_POST['userId'];
+    $query=$conn->prepare("INSERT INTO distributee_access VALUES('$documentId','$userId')");
+    echo "Executing query...";
+    $query->execute();
+    $conn = null;
+    echo "Added distributee $userId to document $documentId";
+    header('Location: ../mainPage.php');
+}
+
 ?>
 
 

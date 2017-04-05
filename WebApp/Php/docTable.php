@@ -20,6 +20,7 @@
             <th>Download</th>
             <th>Delete</th>
             <th>Activate</th>
+            <th>Add Distributee</th>
         </tr>
     </thead>
     <tbody>
@@ -102,6 +103,7 @@
         <th>Download</th>
         <th>Delete</th>
         <th>Activate</th>
+
 
     </tr>
     </thead>
