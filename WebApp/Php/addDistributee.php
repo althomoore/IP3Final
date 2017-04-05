@@ -2,25 +2,28 @@
 <html lang="en">
 
 <head>
-
+    <link rel="stylesheet" href="../SCSS/stylesheet.css">
 </head>
 
 <body>
+<a href="../mainPage.php"><button class="btn medium error">Return</button></a>
 
-<table id="List of Users">
-    <thead>
-    <td>User Id</td>
-    <td>Username</td>
-    </thead>
 
 <form id='Select User' method='post'
       accept-charset='UTF-8'>
-    <label for='userId' >UserId*:</label>
+    <label for='userId' >Enter id of distributee to be added*:</label>
     <input type='text' name='userId' id='userId' maxlength="30" />
     <input type='submit' name='submit' value='Submit' />
 </form>
 </body>
 
+
+<table id="mainTable">
+    <caption>User List</caption>
+    <thead>
+    <td>User Id</td>
+    <td>Username</td>
+    </thead>
 <?php
 
 define("DB_USER", "root");
