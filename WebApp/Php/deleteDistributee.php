@@ -23,12 +23,15 @@ try {
     echo "Connection Failed: " . $e -> getMessage();
 }
 
-$documentId= (int)$_GET['documentId'];
+$userId= (int)$_GET['userid'];
+$documentId= (int)$_GET['documentId']; //Can't get this
+echo $userId;
+echo $documentId;
 
 $query = $conn->prepare("DELETE FROM distributee_access WHERE (User_id = '$userId' AND Document_id = '$documentId')");
 $query->execute();
 $conn = null;
-header('Location: ../mainpage.php');
+//header('Location: ../mainpage.php');
 
 ?>
 
