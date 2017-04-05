@@ -16,12 +16,15 @@
     <link rel="stylesheet" href="SCSS/partials/testing.css">
 
     <link rel="javascript" href="Javascript/javascript.js">
+    <link rel="javascript" href="Javascript/time.js">
 
     <script type="text/javascript" src="https://use.fontawesome.com/2f9bccd1c4.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <script type="text/javascript" src="Javascript/dropdown.js"></script>
     <script type="text/javascript" src="Javascript/sideNav.js"></script>
+
+
 
     <style>
         body {
@@ -103,7 +106,10 @@
     </nav>
 
     <header>
-        <?php include 'PHP/welcome.php'; ?>
+
+        <div class="logo"><img src="./images/logo-ideagen-oneCol.png" width="180px"></div>
+        <div><?php include 'PHP/welcome.php'; ?></div>
+
     </header>
     <section>
         <?php include 'Php/docTable.php'; ?>
