@@ -24,7 +24,7 @@
     $docId = (int)$_GET['documentId'];
     echo "Document Id: " . $docId . "<br>";
     
-    $query = $conn->prepare("UPDATE document SET status = 'active' WHERE id = " . $docId);
+    $query = $conn->prepare("UPDATE document SET status = 'Active' WHERE id = " . $docId);
     $query->execute();
     $conn = null;
     header('Location: ../mainPage.php')

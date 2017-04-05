@@ -203,7 +203,7 @@
 
 nav {
     background-color: #1A2426;
-    width: 25%;
+    width: 22%;
     height: 100vh;
     float: left;
     font-family: 'Open Sans', sans-serif;
@@ -211,9 +211,29 @@ nav {
 
 section {
     float: left;
-    width: 75%;
-    padding: 20px;
+    padding: 0 0 10px 70px;
+    width: 91%;
 }
+
+header {
+    float: left;
+    padding: 5px 30px 10px 30px;
+    width: 90%;
+}
+
+.headSearch {
+    float: left;
+    width: 40%;
+    vertical-align: middle;
+}
+
+.headWelcome {
+    float: right;
+    width: 40%;
+    text-align: right;
+    vertical-align: middle;
+}
+
 
 
 /* line 11, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_navigation.scss */
@@ -422,10 +442,9 @@ body {
 th {
     background-color: #E7EAEC;
     border: 1px solid #E7EAEC;
-    height: 40px;
     color: #222E32;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 8pt;
     text-align: center !important;
 }
 
@@ -439,6 +458,8 @@ tr {
 
 td {
     text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 td a {
@@ -495,16 +516,21 @@ select {
 }
 
 .fa-download {
-    color: #fff;
+    color: #18AEE0;
 }
 
 .fa-trash {
-    color: #c61c18;
+    color: white;
+}
+
+.activateDoc {
+    color: white;
 }
 
 .deleteDoc {
-    color: #18aee0;
+    color: #18AEE0;
 }
+
 
 .sub-container {
     width: 50%;

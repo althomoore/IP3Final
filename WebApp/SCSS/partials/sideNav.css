@@ -2,7 +2,7 @@
     overflow-x: hidden;
     min-height: 400px;
     position: relative;
-    left: 0;
+    width: 80%;
 }
 
 .toggle {
@@ -24,8 +24,7 @@
     color: #fff;
     position: fixed;
     top: 0;
-    left: -306px;
-    width: 285px;
+    left: -22%;
     height: 100%;
 }
 
@@ -47,7 +46,7 @@
 }
 
 .nav-open {
-    left: 243px;
+    left: 19%;
 }
 
 .nav-open .side-nav {
@@ -56,5 +55,5 @@
 
 .wrapper,
 .side-nav {
-    transition: left 0.2s cubic-bezier(.55, 0, .1, 1);
+    transition: left 0.4s cubic-bezier(.55, 0, .1, 1);
 }

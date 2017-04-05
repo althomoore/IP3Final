@@ -1,24 +1,17 @@
-<?php
-echo "<h4 style='padding-left: 20px;'> Welcome back, " . $_SESSION['forename'] . "</h4>";
-?>
-<label>
-    <input type="text" id="myInput" onkeyup="searchTable()">
-    <div class="label-text">Search</div>
-</label>
-
 <table id="mainTable">
     <thead>
     <tr>
-        <th style="width: 50px;">Id</tha>
-        <th>Title</th>
-        <th>Revision</th>
-        <th>Author</th>
-        <th style="min-width: 150px;">Comment</th>
-        <th>Status</th>
-        <th>Edit</th>
-        <th>Download</th>
-        <th>Delete</th>
-        <th>Activate</th>
+
+        <th>TITLE</th>
+        <th style="width: 50px;">FILE NAME</th>
+        <th>REVISION</th>
+        <th>AUTHOR</th>
+        <th style="min-width: 150px;">FILE CONTENTS</th>
+        <th>STATUS</th>
+        <th>EDIT</th>
+        <th>ACTIVATE</th>
+        <th>DOWNLOAD</th>
+        <th>DELETE</th>
     </tr>
     </thead>
     <tbody>
@@ -31,24 +24,26 @@ echo "<h4 style='padding-left: 20px;'> Welcome back, " . $_SESSION['forename'] .
     foreach ($conn->query($query) as $row) {
         echo "
                 <tr id=" . "tableRow" . $row['id'] . " >
-                    <td> " . $row['id'] . " </td>
+                    
                     <td> " . $row['name'] . " </td>
-                    <td> " . "REVISION" . " </td>
+                    <td> " . $row['id'] . " </td>
+                    <td> " . "No." . " </td>
                     <td> " . $row['username'] . " </td>
                     <td> " . $row['comment'] . " </td>
                     <td> " . $row['status'] . " </td>
                     <td> " . "<button class='btn small secondary'>
-                                <a class='deleteDoc' href=\"Php/editDoc.php?documentId=" . $row['id'] . "\"> Edit   
-                                <i class='fa fa-pencil-square-o'></i></a>
+                                <a class='deleteDoc' href=\"Php/editDoc.php?documentId=" . $row['id'] . "\"><i class='fa fa-pencil-square-o'></i></a>
                              </button>" . " </td>
-                    <td> " . "<button class='btn small primary'>Download <i class='fa fa-download'></i></button>" . " </td>
-                    <td> " . "<button class='btn small secondary'>
-                                <a class='deleteDoc' href=\"Php/deleteDoc.php?documentId=" . $row['id'] . "\"> Delete
-                                <i class='fa fa-trash'></i></a>
+                                       
+                             
+                    <td> " . "<button class='btn small primary'>
+                                <a class='activateDoc' href=\"Php/activateDoc.php?documentId=" . $row['id'] . "\">ACTIVATE</a>
                              </button>" . " </td>
                              
-                    <td> " . "<button class='btn small secondary'>
-                                <a class='deleteDoc' href=\"Php/activateDoc.php?documentId=" . $row['id'] . "\"> Activate</a>
+                             <td> " . "<button class='btn small secondary'><i class='fa fa-download'></i></button>" . "</td> 
+                             
+                    <td> " . "<button class='btn small error'>
+                                <a class='deleteDoc' href=\"Php/deleteDoc.php?documentId=" . $row['id'] . "\"><i class='fa fa-trash'></i></a>
                              </button>" . " </td>
                 </tr>
             ";
