@@ -145,9 +145,6 @@
 
     <script>
 
-        var modal = document.getElementById('distributeeModal');
-        var btn = document.getElementById('distributeeButton')
-        var span = document.getElementsByClassName("close")[0];
 
         btn.onclick = function() {
             modal.style.display = "block";

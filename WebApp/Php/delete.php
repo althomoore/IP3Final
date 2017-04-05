@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Delete User</title>
+    <link rel="stylesheet" href="../SCSS/stylesheet.css">
 </head>
 
 <body>
