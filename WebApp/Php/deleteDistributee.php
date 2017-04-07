@@ -10,7 +10,7 @@
 
 <?php
 
-
+session_start();
 
 define("DB_USER", "root");
 define("DB_PASS", "");
@@ -26,14 +26,14 @@ try {
 }
 
 $userId= (int)$_GET['userid'];
-// NEed t
-echo $userId;
-echo $docId;
 
-$query = $conn->prepare("DELETE FROM distributee_access WHERE (User_id = '$userId' AND Document_id = '$docId')");
+echo $userId;
+echo $_SESSION['documentID'];
+
+$query = $conn->prepare("DELETE FROM distributee_access WHERE (User_id = '$userId' AND Document_id = '{$_SESSION['documentID']}')");
 $query->execute();
 $conn = null;
-//header('Location: ./viewDistributee.php');
+header('Location: ../mainPage.php');
 
 ?>
 

@@ -10,12 +10,14 @@
 <body>
 
     <?php
+
+
     
     define("DB_USER", "root");
     define("DB_PASS", "");
     $servername = "localhost";
     $dbname = "mydb";
-    
+
     session_start();
     
     try
@@ -43,7 +45,7 @@
     $query=("SELECT * FROM user WHERE '$userUsername' = username AND '$userPassword' = password_hash");
     
     foreach ($conn->query($query) as $row) {
-        if($userUsername = 'username' and $userPassword = 'password_hash') 
+        if($userUsername = 'username' and $userPassword = 'password_hash')
         {                    
             header('Location: ../mainPage.php');
         }

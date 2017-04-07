@@ -22,14 +22,14 @@ echo "<h4 style='padding-left: 20px;'> Distributees for document:" . $docId . "<
 </body>
 
     <?php
-
+    //session_start();
     define("DB_USER", "root");
     define("DB_PASS", "");
     $servername = "localhost";
     $dbname = "mydb";
 
     $docId = (int)$_GET['documentId'];
-
+    $_SESSION['documentID'] = $docId;
     try {
         $conn=new PDO("mysql:host=$servername;dbname=$dbname",DB_USER, DB_PASS);
         $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -45,7 +45,6 @@ echo "<h4 style='padding-left: 20px;'> Distributees for document:" . $docId . "<
     foreach ($conn->query($query) as $row) {
         echo "
                 <tr id=" . "tableRow" . $row['id'] . " >
-                
                     <td> " . $row['id'] . " </td>
                     <td> " . $row['username'] . " </td>
                  <td><button class='btn small primary'><a class ='buttonAnchor' href=\"deleteDistributee.php?userid=".$row['id']."\">Delete</a></button></td>
