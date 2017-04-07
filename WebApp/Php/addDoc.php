@@ -15,21 +15,37 @@ try {
 
 
 $extn = $_POST['extension'];
-$docTitle = $_POST['docTitle'] . $extn;
+$docTitle = $_POST['docTitle'];
 $authorId = $_POST['authorId'];
 $comment = $_POST['comment'];
 $fileURL = $_POST['fileUrl'];
-$dire = '../file directory/' . $docTitle . '/';
+$dire = '../file directory/' . $docTitle . $extn .  '/';
 
-if( is_dir($dire) === false )
-{
+if( is_dir($dire) === false ) {
+
     mkdir($dire);
+
+
+    $file = fopen($dire . '/' . $docTitle . $extn, 'w');
+
+    fclose($file);
 }
+else {
 
-$file = fopen($dire . '/' . $docTitle, 'w');
+    if (glob($dir . "*.*") != false) {
+        $filecount = count(glob($dire . "*.*"));
 
-fclose($file);
+        $file = fopen($dire . '/' . $docTitle . $filecount . $extn, 'w');
 
+        fclose($file);
+
+    } else {
+        $filecount = 1;
+        $file = fopen($dire . $docTitle . $filecount . $extn, 'w');
+
+        fclose($file);
+    }
+}
 echo "All data has been received from the form";
 
 $query = $conn->prepare("INSERT INTO document VALUES('','$authorId','$docTitle','$comment','$fileURL','draft','','')");
