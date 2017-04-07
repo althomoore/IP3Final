@@ -158,28 +158,6 @@ WHERE (user.username='{$_SESSION['username']}' AND (document.status = 'active' O
     </tbody>
 </table>
 
-<div id="distributeeModal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-            <h2>Add Distributee</h2>
-        </div>
-        <div class="modal-body">
-            <form action="Php/addDistributee.php" method="post">
-                <label>
-                    <input type="text" name="documentId" id="documentId" required>
-                    <div class="label-text">Document ID:</div>
-                </label>
-                <label>
-                    <input type="text" name="userId" id="userId" required>
-                    <div class="label-text">User ID:</div>
-                </label>
-                <input type="submit" class="btn large primary" value="Add Distributee" name="submit" id="submit">
-            </form>
-        </div>
-    </div>
-</div>
-
 
 
 
