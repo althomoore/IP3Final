@@ -19,10 +19,16 @@ $docTitle = $_POST['docTitle'] . $extn;
 $authorId = $_POST['authorId'];
 $comment = $_POST['comment'];
 $fileURL = $_POST['fileUrl'];
-$dire = '../file directory/';
+$dire = '../file directory/' . $docTitle . '/';
 
-$file = fopen($dire . $docTitle, 'w');
+if( is_dir($dire) === false )
+{
+    mkdir($dire);
+}
 
+$file = fopen($dire . '/' . $docTitle, 'w');
+
+fclose($file);
 
 echo "All data has been received from the form";
 
