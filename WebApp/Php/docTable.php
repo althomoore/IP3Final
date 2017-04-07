@@ -160,6 +160,56 @@ WHERE (user.username='{$_SESSION['username']}' AND (document.status = 'active' O
 
 
 
+<h3>Authors Details</h3>
+<table id="mainTable">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>UserName</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <?php
+
+
+    $servername = "localhost";
+    $dbname = "mydb";
+
+    try {
+        $conn=new PDO("mysql:host=$servername;dbname=$dbname",DB_USER, DB_PASS);
+        $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //echo DB_USER . " is connected to " . $dbname;
+    } catch(PDOException $e) {
+        echo "Connection Failed: <br />" . $e -> getMessage();
+    }
+
+    $query= "SELECT user.id, user.forename, user.surname, user.username FROM user";
+    foreach ($conn->query($query) as $row) {
+        echo "
+                <tr id=" . "tableRow" . $row['id'] ." >
+                    <td> " . $row['id'] . " </td>
+                    <td> " . $row['username'] . " </td>
+                    <td> " . $row['forename'] . " </td>
+                    <td> " . $row['surname'] . " </td>
+                   
+            
+                </tr>
+            ";
+    }
+
+    ?>
+    </tbody>
+</table>
+
+
+
+
+
+
+
 
 <?php
 try {
