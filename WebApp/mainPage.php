@@ -98,11 +98,7 @@
             <?php include 'Php/docTable.php'; ?>
         </section>
 
-        <div id="distributeeModal" class="modal">
-            <div class="modal-content">
-                <span class="close">x</span>
-                <p>Some text in the Modal..</p>
-            </div>
+
 
         </div>
 

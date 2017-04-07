@@ -180,45 +180,19 @@ WHERE (user.username='{$_SESSION['username']}' AND (document.status = 'active' O
     </div>
 </div>
 
-<div id="distributeeList" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-            <h2>Distributee List</h2>
-        </div>
-        <div class="modal-body">
 
-            <table id="mainTable">
-                <thead>
-                <td>User Id</td>
-                <td>Username</td>
-                <td>Delete</td>
-                </thead>
 
- <-- VIEW DISTRIBUTEE ********************************************
+
 <?php
 try {
     $conn=new PDO("mysql:host=$servername;dbname=$dbname",DB_USER, DB_PASS);
     $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo DB_USER . " is connected to " . $dbname;
+    //echo DB_USER . " is connected to " . $dbname;
 } catch(PDOException $e) {
     echo "Connection Failed: " . $e -> getMessage();
 }
-$query= "SELECT user.id, user.username FROM distributee_access
-INNER JOIN user ON
-user.id=distributee_access.User_id
-INNER JOIN document ON
-document.id=distributee_access.Document_id
-WHERE document.id = '4'";
-foreach ($conn->query($query) as $row) {
-    echo "
-                <tr id=" . "tableRow" . $row['id'] . " >
-                    <td> " . $row['id'] . " </td>
-                    <td> " . $row['username'] . " </td>
-                    <td><button class='btn small primary'><a class ='buttonAnchor' href=\"delete.php?Author_id=".$row['id']."\">Delete</a></button></td>
-                </tr>
-            ";
-}
+
+
 ?>
 <script>
     var dmodal = document.getElementById('distributeeList');
