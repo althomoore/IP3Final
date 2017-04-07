@@ -10,6 +10,8 @@
 
 <?php
 
+
+
 define("DB_USER", "root");
 define("DB_PASS", "");
 $servername = "localhost";
@@ -24,14 +26,14 @@ try {
 }
 
 $userId= (int)$_GET['userid'];
-$documentId= (int)$_GET['documentId']; //Can't get this
+// NEed t
 echo $userId;
-echo $documentId;
+echo $docId;
 
-$query = $conn->prepare("DELETE FROM distributee_access WHERE (User_id = '$userId' AND Document_id = '$documentId')");
+$query = $conn->prepare("DELETE FROM distributee_access WHERE (User_id = '$userId' AND Document_id = '$docId')");
 $query->execute();
 $conn = null;
-//header('Location: ../mainpage.php');
+//header('Location: ./viewDistributee.php');
 
 ?>
 

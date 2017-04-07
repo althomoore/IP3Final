@@ -6,6 +6,7 @@
 </head>
 
 <?php
+session_start();
 $docId = (int)$_GET['documentId'];
 echo "<h4 style='padding-left: 20px;'> Distributees for document:" . $docId . "</h4>";
 ?>
@@ -36,14 +37,15 @@ echo "<h4 style='padding-left: 20px;'> Distributees for document:" . $docId . "<
         echo "Connection Failed: " . $e -> getMessage();
     }
     $query= "SELECT document.id, user.id, user.username FROM distributee_access
-INNER JOIN user ON
-user.id=distributee_access.User_id
-INNER JOIN document ON
-document.id=distributee_access.Document_id
-WHERE document.id = '$docId'";
+             INNER JOIN user ON
+             user.id=distributee_access.User_id
+             INNER JOIN document ON
+             document.id=distributee_access.Document_id
+             WHERE document.id = '$docId'";
     foreach ($conn->query($query) as $row) {
         echo "
                 <tr id=" . "tableRow" . $row['id'] . " >
+                
                     <td> " . $row['id'] . " </td>
                     <td> " . $row['username'] . " </td>
                  <td><button class='btn small primary'><a class ='buttonAnchor' href=\"deleteDistributee.php?userid=".$row['id']."\">Delete</a></button></td>

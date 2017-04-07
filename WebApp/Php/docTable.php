@@ -107,9 +107,7 @@
         <th>Author ID</th>
         <th style="min-width: 150px;">Comment</th>
         <th>Status</th>
-        <th>Edit</th>
         <th>Download</th>
-        <th>Delete</th>
         <th>Activate</th>
 
 
@@ -146,15 +144,8 @@ WHERE (user.username='{$_SESSION['username']}' AND (document.status = 'active' O
                     <td> " . $row['Author_id'] . " </td>
                     <td> " . $row['comment'] . " </td>
                     <td> " . $row['status'] . " </td>
-                    <td> " . "<button class='btn small secondary'>
-                                <a class='deleteDoc' href=\"Php/editDoc.php?documentId=" . $row['id'] . "\"> Edit   
-                                <i class='fa fa-pencil-square-o'></i></a>
-                             </button>" . " </td>
                     <td> " . "<button class='btn small primary'>Download <i class='fa fa-download'></i></button>" . " </td>
-                    <td> " . "<button class='btn small secondary'>
-                                <a class='deleteDoc' href=\"Php/deleteDoc.php?documentId=" . $row['id'] . "\"> Delete
-                                <i class='fa fa-trash'></i></a>
-                             </button>" . " </td>
+                   
                              
                     <td> " . "<button class='btn small secondary'>
                                 <a class='deleteDoc' href=\"Php/activateDoc.php?documentId=" . $row['id'] . "\"> Activate</a>
