@@ -20,7 +20,8 @@ $authorId = $_POST['authorId'];
 $comment = $_POST['comment'];
 $fileURL = $_POST['fileUrl'];
 $dire = '../file directory/' . $docTitle . $extn .  '/';
-
+$t=time();
+$isDraft= 1;
 if( is_dir($dire) === false ) {
 
     mkdir($dire);
@@ -29,29 +30,35 @@ if( is_dir($dire) === false ) {
     $file = fopen($dire . '/' . $docTitle . $extn, 'w');
 
     fclose($file);
+
+    $query = $conn->prepare("INSERT INTO document VALUES('','$authorId','$docTitle','$comment','$fileURL','draft','','')");
+    echo "Executing query...";
+    $query->execute();
+    echo "Query completed, data entered to database";
+    $conn = null;
 }
 else {
 
-    if (glob($dir . "*.*") != false) {
-        $filecount = count(glob($dire . "*.*"));
 
-        $file = fopen($dire . '/' . $docTitle . $filecount . $extn, 'w');
+    $file = fopen($dire . '/' . $docTitle . $t . $extn, 'w');
 
-        fclose($file);
+    fclose($file);
 
-    } else {
-        $filecount = 1;
-        $file = fopen($dire . $docTitle . $filecount . $extn, 'w');
+    $rdire = $dire . $docTitle . $extn .$t;
+    $query2 = "SELECT document.id from document where document.name = '$docTitle'";
+    foreach ($conn->query($query2) as $row) {
 
-        fclose($file);
+
+        $query = $conn->prepare("INSERT INTO revision VALUES('','{$row['id']}', '$isDraft', '$t', '$rdire' )");
+        echo "Executing query...";
+        $query->execute();
+
+        echo "Query completed, data entered to database";
+
     }
+    $conn = null;
 }
-echo "All data has been received from the form";
 
-$query = $conn->prepare("INSERT INTO document VALUES('','$authorId','$docTitle','$comment','$fileURL','draft','','')");
-echo "Executing query...";
-$query->execute();
-echo "Query completed, data entered to database";
-$conn = null;
+
 header("Location: ../mainPage.php");
 ?>
