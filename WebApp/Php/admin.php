@@ -1,5 +1,14 @@
+<?php
+session_start();
+
+if($_SESSION['role'] !== 'admin'){
+
+    header("Location: ./Denied.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 
 <head>
     <meta charset="UTF-8">
@@ -87,7 +96,7 @@
         define("DB_PASS", "");
         $servername = "localhost";
         $dbname = "mydb";
-    
+
         try {
             $conn=new PDO("mysql:host=$servername;dbname=$dbname",DB_USER, DB_PASS);
             $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

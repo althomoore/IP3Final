@@ -17,7 +17,7 @@
     <tbody>
 
     <?php
-
+echo"Your role is "; echo $_SESSION['role'];
 
     $query = "SELECT document.id, user.username, document.name, document.comment, document.status FROM document INNER JOIN user ON document.Author_id=user. id WHERE (user.username='{$_SESSION['username']}' AND (document.status = 'active' OR document.status = 'draft'))";
 

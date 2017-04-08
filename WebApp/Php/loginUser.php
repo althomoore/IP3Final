@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,11 +45,21 @@
     $query=("SELECT * FROM user WHERE '$userUsername' = username AND '$userPassword' = password_hash");
     
     foreach ($conn->query($query) as $row) {
-        if($userUsername = 'username' and $userPassword = 'password_hash') 
-        {                    
+        $admin = $row['isAdmin'];
+        if($userUsername = 'username' and $userPassword = 'password_hash' and $row['isAdmin'] == '1')
+        {
+            $role = admin;
+            $_SESSION["role"] = $role;
             header('Location: ../mainPage.php');
         }
-        else 
+        elseif($userUsername = 'username' and $userPassword = 'password_hash' and $row['isAdmin'] == '0')
+        {
+            $role = user;
+            $_SESSION["role"] = $role;
+            header('Location: ../mainPage.php');
+
+        }
+        else
         {
             echo "Failed, try again";
         }
