@@ -1,35 +1,16 @@
 .modal {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 10%;
-    margin: auto;
     display: none;
-    z-index: 1;
-    width: 60%;
-    overflow: auto;
-    border: 1px solid #0a3254;
-    border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.4);
-    font-family: 'Open Sans', serif;
-    -webkit-animation-name: fadeIn;
-    -webkit-animation-duration: 0.4s;
-    animation-name: fadeIn;
-    animation-duration: 0.4s;
-}
-
-.modal-mainpage {
     position: fixed;
-    top: 10%;
-    margin: auto;
-    display: none;
     z-index: 1;
-    width: 60%;
+    padding-top: 10px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     overflow: auto;
-    border: 1px solid #0a3254;
-    border-radius: 15px;
+    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
-    font-family: 'Open Sans', serif;
+    font-family: 'Open Sans';
     -webkit-animation-name: fadeIn;
     -webkit-animation-duration: 0.4s;
     animation-name: fadeIn;
@@ -37,9 +18,14 @@
 }
 
 .modal-content {
-    position: relative;
+    position: fixed;
+    overflow: scroll;
     bottom: 0;
     background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    height: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
@@ -90,28 +76,25 @@
 .close {
     color: white;
     float: right;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
-    position: relative;
-    top: 15px;
-    bottom: 15px;
 }
 
 .close:hover,
 .close:focus {
     color: #f22929;
     text-decoration: none;
-    cursor: default;
+    cursor: pointer;
 }
 
 .modal-header {
-    padding: 1px 30px 1px 30px;
+    padding: 2px 16px;
     background-color: #0a3254;
     color: white;
 }
 
 .modal-body {
-    padding: 10px 20px 20px 20px;
+    padding: 2px 16px;
 }
 
 .modal-footer {

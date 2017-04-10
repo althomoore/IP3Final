@@ -24,7 +24,7 @@
     $docId = (int)$_GET['documentId'];
     echo "Document id has been passed: " . $docId . "<br>";
     
-    $query = $conn->prepare("UPDATE document SET status = 'Draft' WHERE id = " . $docId);
+    $query = $conn->prepare("UPDATE document SET status = 'draft' WHERE id = " . $docId);
     echo "Executing delete on document with id " . $docId . "<br>";
     $query->execute();
     echo "Query complete" . "<br>";

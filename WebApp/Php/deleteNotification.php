@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Activate Document</title>
+    <title>Delete Notification</title>
 </head>
 <body>
     
@@ -21,13 +21,15 @@
         echo "Connection Failed: <br> " . $e -> getMessage();
     }
     
-    $docId = (int)$_GET['documentId'];
-    echo "Document Id: " . $docId . "<br>";
+    $notificationId = (int)$_GET['notificationId'];
+    echo "Notification id has been passed: " . $notificationId . "<br>";
     
-    $query = $conn->prepare("UPDATE document SET status = 'active' WHERE id = " . $docId);
+    $query = $conn->prepare("DELETE FROM notification WHERE notificationId= " . $notificationId);
+    echo "Executing delete on document with id " . $docId . "<br>";
     $query->execute();
+    echo "Query complete" . "<br>";
     $conn = null;
-    header('Location: ../mainPage.php')
+    header('Location: ../mainPage.php');
     
     ?>
     
