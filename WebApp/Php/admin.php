@@ -96,6 +96,7 @@
                         <td>Archived?</td>
                         <td>Archive</td>
                         <td>Delete</td>
+                        <td>Edit</td>
                     </thead>
 
                     <?php
@@ -107,19 +108,28 @@
         try {
             $conn=new PDO("mysql:host=$servername;dbname=$dbname",DB_USER, DB_PASS);
             $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo DB_USER . " is connected to " . $dbname;
+            //echo DB_USER . " is connected to " . $dbname;
         } catch(PDOException $e) {
             echo "Connection Failed: " . $e -> getMessage();
         }
         $query= 'SELECT * FROM user';
         foreach ($conn->query($query) as $row) {
+            
+            if($row['isActive'] == 1)
+            {
+                $active = "Active";
+            } else {
+                $active = "Archived";
+            }
+            
             echo "
                 <tr id=" . "tableRow" . $row['id'] . " >
                     <td> " . $row['id'] . " </td>
                     <td> " . $row['username'] . " </td>
-                    <td> " . $row['isActive'] . " </td>
+                    <td> " . $active . " </td>
                     <td><button class='btn small primary'><a class ='buttonAnchor' href=\"delete.php?Author_id=".$row['id']."\">Archive</a></button></td>
                     <td><button class='btn small primary'><a class ='buttonAnchor' href=\"permDelete.php?Author_id=".$row['id']."\">Delete</a></button></td>
+                    <td><button class='btn small primary'><a class ='buttonAnchor' href=\"editUser.php?Author_id=".$row['id']."\">Edit</a></button></td>
                 </tr>
             ";
         }

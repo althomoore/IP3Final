@@ -58,6 +58,7 @@
                                 <a class='deleteDoc' href='#'>Download <i class='fa faButton fa-download'></i></a>
                                 <a class='deleteDoc' href=\"Php/editDoc.php?documentId=" . $row['id'] . "\">Edit <i class='fa faButton fa-pencil-square-o'></i></a>
                                 <a class='deleteDoc' href=\"Php/activateDoc.php?documentId=" . $row['id'] . "\">Activate <i class='fa faButton fa-check'></i></a>
+                                <a class='deleteDoc' href=\"Php/updateDoc.php?documentId=" . $row['id'] . "\">Update <i class='fa faButton fa-wrench'></i></a>
                                 <a class='deleteDoc' href=\"Php/deleteDoc.php?documentId=" . $row['id'] . "\">Delete <i class='fa faButton fa-trash'></i></a>
                             </div>
                         </div>  

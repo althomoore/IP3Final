@@ -54,6 +54,7 @@
         {
             $role = 'user';
             $_SESSION['role'] = user;
+            $_SESSION['userId'] = $row['id'];
             header('Location: ../mainPage.php');
         } else {
             echo "Failed, try again";
