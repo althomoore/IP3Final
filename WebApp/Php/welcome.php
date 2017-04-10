@@ -1,7 +1,7 @@
 <script>
     function startTime() {
         var currentDate = new Date();
-        var d = currentDate.getDay();
+        var d = currentDate.getDay() + 9;
         var M = currentDate.getMonth() + 1;
         var Y = currentDate.getFullYear();
         var h = currentDate.getHours();
@@ -34,12 +34,5 @@
     echo "Welcome back " . "<b>" . $_SESSION['forename'] . "</b>" . "<h5>" . "<div id='time'></div>" . "</h5>";
 
     ?></div>
-
-<div class="headSearch">
-    <label>
-        <input type="text" id="myInput" onkeyup="searchTable()">
-        <div class="label-text">Search</div>
-    </label></div>
-
 
 </body>

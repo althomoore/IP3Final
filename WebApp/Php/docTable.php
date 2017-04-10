@@ -1,28 +1,24 @@
-<?php
-    echo "<h4 style='padding-left: 20px;'> Welcome back, " . $_SESSION['forename'] . "</h4>";
-?>
-
     <button class="btn medium primary" onclick="changeView()">Change View</button>
 
     <label>
-        <input type="text" id="myInput" placeholder="Id, name or comment" onkeyup="searchTable(), searchTable2()">
+        <input type="text" id="myInput" onkeyup="searchTable(), searchTable2()">
         <div class="label-text">Search</div>
     </label>
 
     <?php
 
-    define("DB_USER", "root");
-        define("DB_PASS", "");
-        $servername = "localhost";
-        $dbname = "mydb";
-    
-        try {
-            $conn=new PDO("mysql:host=$servername;dbname=$dbname",DB_USER, DB_PASS);
-            $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            //echo DB_USER . " is connected to " . $dbname;
-        } catch(PDOException $e) {
-            echo "Connection Failed: <br />" . $e -> getMessage();
-        }
+//    define("DB_USER", "root");
+//        define("DB_PASS", "");
+//        $servername = "localhost";
+//        $dbname = "mydb";
+//    
+//        try {
+//            $conn=new PDO("mysql:host=$servername;dbname=$dbname",DB_USER, DB_PASS);
+//            $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//            //echo DB_USER . " is connected to " . $dbname;
+//        } catch(PDOException $e) {
+//            echo "Connection Failed: <br />" . $e -> getMessage();
+//        }
 
         $notify="SELECT notification.notificationId, notification.message, user.username FROM notification INNER JOIN user ON notification.userId = user.id WHERE user.username='{$_SESSION['username']}'";
         foreach($conn->query($notify) as $row) {

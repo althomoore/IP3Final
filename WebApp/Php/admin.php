@@ -29,11 +29,6 @@
         <p>Click the button to open a dialog showing a list of all users and their roles. Click the delete button next to a user to remove them from the database.</p>
         <button id="userListBtn" class="btn primary medium">Show Users</button>
     </section>
-    <section>
-       <h2>Send Test Notification</h2>
-       <p>Click the button to send a test notification to userId 1: Wbrett200</p>
-       
-    </section>
 
     <div id="myModal" class="modal">
         <div class="modal-content">

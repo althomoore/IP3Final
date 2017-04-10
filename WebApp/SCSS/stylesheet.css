@@ -198,24 +198,6 @@
     border: 1px solid #439e00;
 }
 
-
-/* line 3, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_navigation.scss */
-
-nav {
-    background-color: #1A2426;
-    width: 25%;
-    height: 100vh;
-    float: left;
-    font-family: 'Open Sans', sans-serif;
-}
-
-section {
-    float: left;
-    width: 75%;
-    padding-bottom: 20px;
-}
-
-
 /* line 11, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_navigation.scss */
 
 ul {
@@ -609,4 +591,60 @@ h6 {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+nav {
+    background-color: #1A2426;
+    width: 22%;
+    height: 100vh;
+    float: left;
+    font-family: 'Open Sans', sans-serif;
+}
+
+section {
+    float: left;
+    padding: 0 0 10px 70px;
+    width: 91%;
+}
+
+header {
+    float: left;
+    padding: 5px 30px 10px 30px;
+    width: 90.5%;
+    background-color: #F2F2F2;
+}
+
+.logo {
+    float: left;
+    padding-top: 15px;
+    padding-right: 30px;
+    height: 75px;
+    width: 18%;
+    display: flex;
+    align-items: center;
+
+}
+
+.logo img {
+    margin: 0;
+}
+
+.headSearch {
+    float: left;
+    width: 50%;
+    padding: 20px 30px 0 30px;
+    font-family: 'Open Sans', sans-serif;
+    height: 75px;
+    text-align: center;
+}
+
+.headWelcome {
+    float: right;
+    width: 25%;
+    text-align: right;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+    height: 75px;
+    color: #18AEE0;
 }

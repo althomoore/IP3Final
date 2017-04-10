@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="SCSS/partials/testing.css">
 
     <link rel="javascript" href="Javascript/javascript.js">
+    <link rel="stylesheet" href="Javascript/time.js">
 
     <script type="text/javascript" src="https://use.fontawesome.com/2f9bccd1c4.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -30,6 +31,8 @@
         }
 
     </style>
+    
+    <?php include 'Php/connection.php'; ?>
 </head>
 
 <body>
@@ -44,33 +47,40 @@
                 <div class="username">
                     <?php 
                     session_start();
-                    echo "<h3>" . $_SESSION["username"] . "</h3>";
+                    echo "<h3>" . $_SESSION["forename"] . "</h3>";
                     ?>
                 </div>
             </div>
+            
+            
+<!--            **********************************************************************-->
 
             <div class="taskbox">
                 <div class="taskbar">
-                    <a class="texttask">TASKS</a>
+                    <a class="texttask">MY DOCUMENTS</a>
                 </div>
 
                 <div class="taskbar">
                     <div class="tasks1">
-                        <a class="textpad1">5</a>
+                        <a class="textpad1"> <?php include 'Php/draftCount.php'; ?> </a>
                         <br/>
-                        <a class="textpad">Overdue</a>
+                        <a class="textpad">Draft</a>
                     </div>
                     <div class="tasks2">
-                        <a class="textpad1">0</a>
+                        <a class="textpad1"> <?php include 'Php/activeCount.php'; ?> </a>
                         <br/>
-                        <a class="textpad">This Week</a>
+                        <a class="textpad">Active</a>
                     </div>
                     <div class="tasks3">
-                        <a class="textpad1">7</a>
+                        <a class="textpad1"> <?php include 'Php/archiveCount.php'; ?> </a>
                         <br/>
-                        <a class="textpad">Outstanding</a>
+                        <a class="textpad">Archive</a>
                     </div>
                 </div>
+                
+<!--                *******************************************************************-->
+                
+                
 
                 <div class="tools">
                     <ul>
@@ -95,6 +105,9 @@
                 </div>
             </div>
         </nav>
+        
+        <div class="logo"><img src="./images/logo-ideagen-oneCol.png" alt="Logo" width="180px"></div>
+        <div><?php include 'Php/welcome.php'; ?></div>
 
         <section>
             <?php include 'Php/docTable.php'; ?>
@@ -115,17 +128,13 @@
                     <!--                <form action="Php/createFile.php" method="get" id="searchForm">-->
                     <form action="Php/addDoc.php" method="post">
 
-                        <label>
+                    <label>
                         <input type="text" name="docTitle" id="docTitle">
                         <div class="label-text" autofocus>Title</div>
                     </label>
-                        <label>
-                        <input type="text" name="authorId" id="authorId">
-                        <div class="label-text">Author ID</div>
-                    </label>
-                        <label for="comment">Comment</label>
+                    <label for="comment">Comment</label>
                         <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
-                        <label>
+                    <label>
                         <input type="file" name="fileUrl" id="fileUrl">
                     </label>
 

@@ -4,6 +4,8 @@
         define("DB_PASS", "");
         $servername = "localhost";
         $dbname = "mydb";
+
+        session_start();
     
         try {
             $conn=new PDO("mysql:host=$servername;dbname=$dbname",DB_USER, DB_PASS);
@@ -14,13 +16,13 @@
         }
 
         $docTitle = $_POST['docTitle'];
-        $authorId = $_POST['authorId'];
+        //$authorId = $_POST['authorId'];
         $comment = $_POST['comment'];
         $fileURL = $_POST['fileUrl'];
         
         echo "All data has been recieved from the form";
         
-        $query=$conn->prepare("INSERT INTO document VALUES('','$authorId','$docTitle','$comment','$fileURL','draft','','')");
+        $query=$conn->prepare("INSERT INTO document VALUES('','{$_SESSION['userId']}','$docTitle','$comment','$fileURL','draft','','')");
         echo "Executing query...";
         $query->execute();
         echo "Query completed, data entered to database";

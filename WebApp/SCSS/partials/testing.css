@@ -20,7 +20,7 @@ label input {
     font-size: 18px;
     outline: 0;
     padding: 5px 20px;
-    width: 40%;
+    width: 30%;
     transition: all 0.3s cubic-bezier(.55, 0, .1, 1);
 }
 
