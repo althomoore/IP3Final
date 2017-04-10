@@ -1,3 +1,12 @@
+
+<?php 
+    session_start();
+    if($_SESSION['role'] !== 'admin')
+    {
+        header('Location: ../mainPage.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,8 +25,9 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body>   
     <a href="../mainPage.php"><button class="btn medium error">Return</button></a>
+    
     <h1>Administration Tools</h1>
     <section>
         <h2>Add User</h2>
@@ -29,6 +39,8 @@
         <p>Click the button to open a dialog showing a list of all users and their roles. Click the delete button next to a user to remove them from the database.</p>
         <button id="userListBtn" class="btn primary medium">Show Users</button>
     </section>
+    
+    
 
     <div id="myModal" class="modal">
         <div class="modal-content">

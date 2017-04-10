@@ -10,8 +10,6 @@
 <body>
 
     <?php
-
-
     
     define("DB_USER", "root");
     define("DB_PASS", "");
@@ -45,13 +43,19 @@
     $query=("SELECT * FROM user WHERE '$userUsername' = username AND '$userPassword' = password_hash");
     
     foreach ($conn->query($query) as $row) {
-        if($userUsername = 'username' and $userPassword = 'password_hash')
-        {                    
+        if($userUsername = 'username' and $userPassword = 'password_hash' and $row['isAdmin'] == '1')
+        {        
+            $role = "admin";
+            $_SESSION['role'] = $role;
             $_SESSION['userId'] = $row['id'];
             header('Location: ../mainPage.php');
         }
-        else 
+        else if($userUsername = 'username' and $userPassword = 'password_hash' and $row['isAdmin'] == '0')
         {
+            $role = 'user';
+            $_SESSION['role'] = user;
+            header('Location: ../mainPage.php');
+        } else {
             echo "Failed, try again";
         }
     }

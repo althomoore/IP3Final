@@ -95,7 +95,7 @@
                         </li>
                         <li>
                            <?php
-                                echo "<a href=\"./Php/admin.php?Id=" . $_SESSION['userId'] . "\"><i class='fa fa-2x fa-id-badge'></i> Admin</a>";
+                                echo "<a href=\"./Php/admin.php?userId=" . $_SESSION['userId'] . "\"><i class='fa fa-2x fa-id-badge'></i> Admin</a>";
                             ?>
                         </li>
                         <li>

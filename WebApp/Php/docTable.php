@@ -1,4 +1,4 @@
-    <button class="btn medium primary" onclick="changeView()">Change View</button>
+    <button id="changeView" class="btn medium primary" onclick="changeView()">Change View</button>
 
     <label>
         <input type="text" id="myInput" onkeyup="searchTable(), searchTable2()">
@@ -6,20 +6,6 @@
     </label>
 
     <?php
-
-//    define("DB_USER", "root");
-//        define("DB_PASS", "");
-//        $servername = "localhost";
-//        $dbname = "mydb";
-//    
-//        try {
-//            $conn=new PDO("mysql:host=$servername;dbname=$dbname",DB_USER, DB_PASS);
-//            $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//            //echo DB_USER . " is connected to " . $dbname;
-//        } catch(PDOException $e) {
-//            echo "Connection Failed: <br />" . $e -> getMessage();
-//        }
-
         $notify="SELECT notification.notificationId, notification.message, user.username FROM notification INNER JOIN user ON notification.userId = user.id WHERE user.username='{$_SESSION['username']}'";
         foreach($conn->query($notify) as $row) {
             echo "

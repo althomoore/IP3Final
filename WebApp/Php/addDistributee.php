@@ -8,14 +8,12 @@
 <body>
     <a href="../mainPage.php"><button class="btn medium error">Return</button></a>
 
-
     <form id='Select User' method='post' accept-charset='UTF-8'>
         <label for='userId'>Enter id of distributee to be added*:</label>
         <input type='text' name='userId' id='userId' maxlength="30" />
         <input type='submit' name='submit' value='Submit' />
     </form>
 </body>
-
 
 <table id="mainTable">
     <thead>
@@ -28,7 +26,6 @@ define("DB_USER", "root");
 define("DB_PASS", "");
 $servername = "localhost";
 $dbname = "mydb";
-
 
 session_start();
 
@@ -63,7 +60,6 @@ If($_POST){
     echo "<br> " . $_SESSION['notify-userId'];
     header('Location: ../Php/notify.php');
 }
-
 ?>
 </table>
 
