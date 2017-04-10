@@ -203,7 +203,7 @@
 
 nav {
     background-color: #1A2426;
-    width: 22%;
+    width: 25%;
     height: 100vh;
     float: left;
     font-family: 'Open Sans', sans-serif;
@@ -211,52 +211,9 @@ nav {
 
 section {
     float: left;
-    padding: 0 0 10px 70px;
-    width: 91%;
+    width: 75%;
+    padding-bottom: 20px;
 }
-
-header {
-    float: left;
-    padding: 5px 30px 10px 30px;
-    width: 90.5%;
-    background-color: #F2F2F2;
-}
-
-.logo {
-    float: left;
-    padding-top: 15px;
-    padding-right: 30px;
-    height: 75px;
-    width: 18%;
-    display: flex;
-    align-items: center;
-
-}
-
-.logo img {
-    margin: 0;
-}
-
-.headSearch {
-    float: left;
-    width: 50%;
-    padding: 20px 30px 0 30px;
-    font-family: 'Open Sans', sans-serif;
-    height: 75px;
-    text-align: center;
-}
-
-.headWelcome {
-    float: right;
-    width: 22%;
-    text-align: right;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    font-family: 'Open Sans', sans-serif;
-    height: 75px;
-    color: #18AEE0;
-}
-
 
 
 /* line 11, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_navigation.scss */
@@ -267,6 +224,7 @@ ul {
     padding-left: 0;
     overflow: hidden;
 }
+
 
 /* line 18, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_navigation.scss */
 
@@ -407,12 +365,14 @@ div.usernameimage {
     color: white;
 }
 
+
 /* line 13, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/stylesheet.scss */
 
 body {
-    padding: 0;
+    padding: 0px;
     margin: 10px;
 }
+
 
 /* Dropdown Content (Hidden by Default) */
 
@@ -438,8 +398,9 @@ body {
 
 .btnArrow {
     color: #fff !important;
-    padding-right: 0 !important;
+    padding-right: 0px !important;
 }
+
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 
@@ -455,19 +416,34 @@ body {
     border-collapse: collapse;
     width: 100%;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
-    transition: box-shadow 0.4s cubic-bezier(.55, 0, .1, 1);
+    transition: box-shadow 0.2s cubic-bezier(.55, 0, .1, 1);
+}
+
+#distTable {
+    background-color: #F3F3F3;
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.2s cubic-bezier(.55, 0, .1, 1);
 }
 
 .noShadow {
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0) !important;
 }
 
+.invisible {
+    display: none;
+    display: none;
+}
+
 th {
     background-color: #E7EAEC;
     border: 1px solid #E7EAEC;
+    height: 40px;
     color: #222E32;
     font-family: 'Roboto', sans-serif;
-    font-size: 8pt;
+    font-size: 12px;
+    vertical-align: center;
     text-align: center !important;
 }
 
@@ -481,8 +457,6 @@ tr {
 
 td {
     text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 td a {
@@ -532,38 +506,107 @@ select {
     padding-right: 20px;
 }
 
-.fa-pencil-square-o, .fa-download, .fa-trash {
-    padding: 0;
+.faButton {
+    padding: 0 !important;
     vertical-align: middle;
     color: #18aee0;
 }
 
-.fa-download {
-    color: #18AEE0;
+.fa-download,
+.fa-address-book-o {
+    color: #fff;
 }
 
 .fa-trash {
-    color: white;
-}
-
-.activateDoc {
-    color: white;
+    color: #c61c18;
 }
 
 .deleteDoc {
-    color: #18AEE0;
+    color: #18aee0;
 }
-
 
 .sub-container {
     width: 50%;
     text-align: center;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Open Sans', sans-serif;
 }
 
 .buttonAnchor {
     color: white;
+}
+
+.alert {
+    padding: 10px;
+    background-color: #2196F3;
+    /* Red */
+    color: white;
+    margin-bottom: 15px;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    left: 0px;
+    min-width: 100px;
+}
+
+.dropdown-content a {
+    color: #18aee0;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    vertical-align: middle;
+}
+
+.dropdown-content a:nth-child(1) {
+    color: #fff;
+    background-color: #18aee0;
+}
+
+.dropdown-content a:nth-child(4) {
+    color: #c61c18;
+}
+
+.dropdown-content a:hover {
+    background-color: #f3f4f5;
+}
+
+.dropdown-content a:hover:nth-child(1) {
+    background-color: #2fb6e3;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }

@@ -26,7 +26,7 @@
     
     $Author_id = (int)$_GET['Author_id'];
     
-    $query = $conn->prepare("UPDATE user SET isActive = '0' WHERE id = " . $Author_id);
+    $query = $conn->prepare("DELETE FROM user WHERE id = " . $Author_id);
     $query->execute();
     $conn = null;
     header('Location: ./admin.php');

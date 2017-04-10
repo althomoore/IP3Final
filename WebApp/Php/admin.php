@@ -25,16 +25,21 @@
         <button id="myBtn" class="btn primary medium">Add User</button>
     </section>
     <section>
-        <h2>Show/Delete Users</h2>
+        <h2>Show/ Delete Users</h2>
         <p>Click the button to open a dialog showing a list of all users and their roles. Click the delete button next to a user to remove them from the database.</p>
         <button id="userListBtn" class="btn primary medium">Show Users</button>
+    </section>
+    <section>
+       <h2>Send Test Notification</h2>
+       <p>Click the button to send a test notification to userId 1: Wbrett200</p>
+       
     </section>
 
     <div id="myModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close">&times;</span>
-                <h3>Add New User</h3>
+                <h2>Add New User</h2>
             </div>
             <div class="modal-body">
                 <form action="addUser.php" method="post">
@@ -58,7 +63,10 @@
                         <input type="password" name="password" id="password" required>
                         <div class="label-text">Password:</div>
                     </label>
-
+                    <label>
+                        <input type="text" name="roleId" id="roleId" required>
+                        <div class="label-text">Role Id:</div>
+                    </label>
 
                     <input type="submit" class="btn large primary" value="Add User" name="submit" id="submit">
                 </form>
@@ -70,16 +78,17 @@
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close">&times;</span>
-                <h3>User List</h3>
+                <h2>User List</h2>
             </div>
             <div class="modal-body">
 
                 <table id="mainTable">
                     <thead>
-                        <th>User Id</th>
-                        <th>Name</th>
-                        <th>Username</th>
-                        <th>Delete</th>
+                        <td>User Id</td>
+                        <td>Username</td>
+                        <td>Archived?</td>
+                        <td>Archive</td>
+                        <td>Delete</td>
                     </thead>
 
                     <?php
@@ -91,6 +100,7 @@
         try {
             $conn=new PDO("mysql:host=$servername;dbname=$dbname",DB_USER, DB_PASS);
             $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo DB_USER . " is connected to " . $dbname;
         } catch(PDOException $e) {
             echo "Connection Failed: " . $e -> getMessage();
         }
@@ -99,9 +109,10 @@
             echo "
                 <tr id=" . "tableRow" . $row['id'] . " >
                     <td> " . $row['id'] . " </td>
-                    <td> " . $row['forename'], ' ', $row['surname'] . "</td>
                     <td> " . $row['username'] . " </td>
-                    <td><button class='btn small primary'><a class ='buttonAnchor' href=\"delete.php?Author_id=".$row['id']."\">Delete</a></button></td>
+                    <td> " . $row['isActive'] . " </td>
+                    <td><button class='btn small primary'><a class ='buttonAnchor' href=\"delete.php?Author_id=".$row['id']."\">Archive</a></button></td>
+                    <td><button class='btn small primary'><a class ='buttonAnchor' href=\"permDelete.php?Author_id=".$row['id']."\">Delete</a></button></td>
                 </tr>
             ";
         }
