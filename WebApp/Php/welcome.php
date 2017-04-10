@@ -1,7 +1,7 @@
 <script>
     function startTime() {
         var currentDate = new Date();
-        var d = currentDate.getDay();
+        var d = currentDate.getDay() + 9;
         var M = currentDate.getMonth() + 1;
         var Y = currentDate.getFullYear();
         var h = currentDate.getHours();
@@ -35,11 +35,9 @@
 
     ?></div>
 
-<div class="headSearch">
-    <label>
-        <input type="text" id="myInput" onkeyup="searchTable()">
-        <div class="label-text">Search</div>
-    </label></div>
-
+<label>
+    <input type="text" id="myInput" onkeyup="searchTable(), searchTable2()">
+    <div class="label-text">Search</div>
+</label>
 
 </body>

@@ -20,7 +20,7 @@ label input {
     font-size: 18px;
     outline: 0;
     padding: 5px 20px;
-    width: 40%;
+    width: 30%;
     transition: all 0.3s cubic-bezier(.55, 0, .1, 1);
 }
 
@@ -33,4 +33,19 @@ label input:focus + .label-text {
     color: #18aee0;
     font-size: 13px;
     transform: translateY(-54px);
+}
+
+.input-readonly {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 2px solid red;
+        font-size: 18px;
+        outline: 0;
+        padding: 5px 20px;
+        width: 30%;
+}
+
+label .input-readonly:focus {
+    width: 90%;
+    border-bottom: 2px solid red;
 }

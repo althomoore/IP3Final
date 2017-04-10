@@ -198,24 +198,6 @@
     border: 1px solid #439e00;
 }
 
-
-/* line 3, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_navigation.scss */
-
-nav {
-    background-color: #1A2426;
-    width: 25%;
-    height: 100vh;
-    float: left;
-    font-family: 'Open Sans', sans-serif;
-}
-
-section {
-    float: left;
-    width: 75%;
-    padding-bottom: 20px;
-}
-
-
 /* line 11, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_navigation.scss */
 
 ul {
@@ -433,7 +415,6 @@ body {
 
 .invisible {
     display: none;
-    display: none;
 }
 
 th {
@@ -570,6 +551,7 @@ h6 {
 .dropdown {
     position: relative;
     display: inline-block;
+
 }
 
 .dropdown-content {
@@ -579,7 +561,9 @@ h6 {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     left: 0px;
-    min-width: 100px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
 .dropdown-content a {
@@ -595,7 +579,7 @@ h6 {
     background-color: #18aee0;
 }
 
-.dropdown-content a:nth-child(4) {
+.dropdown-content a:nth-child(5) {
     color: #c61c18;
 }
 
@@ -610,3 +594,81 @@ h6 {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+nav {
+    background-color: #1A2426;
+    width: 22%;
+    height: 100vh;
+    float: left;
+    font-family: 'Open Sans', sans-serif;
+}
+
+section {
+    float: left;
+    padding: 0 0 10px 70px;
+    width: 91%;
+}
+
+header {
+    float: left;
+    padding: 5px 30px 10px 30px;
+    width: 90.5%;
+    background-color: #F2F2F2;
+}
+
+.logo {
+    float: left;
+    padding-top: 15px;
+    padding-right: 30px;
+    height: 75px;
+    width: 18%;
+    display: flex;
+    align-items: center;
+
+}
+
+.logo img {
+    margin: 0;
+}
+
+.headSearch {
+    float: left;
+    width: 50%;
+    padding: 20px 30px 0 30px;
+    font-family: 'Open Sans', sans-serif;
+    height: 75px;
+    text-align: center;
+}
+
+.headWelcome {
+    float: right;
+    width: 25%;
+    text-align: right;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+    height: 75px;
+    color: #18AEE0;
+}
+
+.authortoggle {
+    float: left;
+    width: 80%;
+    color: #0a3254;
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 30px;
+}
+
+.togglebutton {
+    float: right;
+    vertical-align: middle;
+    padding: 10px 30px 10px 0;
+}
+
+.docowner {
+
+    font-weight: bold;
+}
+
+
+

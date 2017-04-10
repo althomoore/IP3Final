@@ -1,8 +1,8 @@
 .wrapper {
     overflow-x: hidden;
-    min-height: 600px;
+    min-height: 800px;
     position: relative;
-    left: 0;
+    width: 80%;
 }
 
 .toggle {
@@ -10,8 +10,8 @@
     cursor: pointer;
     font-size: 1em;
     position: relative;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     background-color: #1A2426;
     padding: 10px 15px;
     z-index: 1;
@@ -24,8 +24,7 @@
     color: #fff;
     position: fixed;
     top: 0;
-    left: -306px;
-    width: 285px;
+    left: -22%;
     height: 100%;
 }
 
@@ -47,7 +46,7 @@
 }
 
 .nav-open {
-    left: 243px;
+    left: 18.5%;
 }
 
 .nav-open .side-nav {
@@ -56,5 +55,5 @@
 
 .wrapper,
 .side-nav {
-    transition: left 0.2s cubic-bezier(.55, 0, .1, 1);
+    transition: left 0.4s cubic-bezier(.55, 0, .1, 1);
 }
