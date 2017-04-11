@@ -112,53 +112,53 @@
 
     </header>
     <section>
-        <?php include 'Php/docTable.php'; ?>
-    </section>
+                    <?php include 'Php/docTable.php'; ?>
+                </section>
 
-    <div id="myModal" class="modal-mainpage">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h3>Add New Document</h3>
-            </div>
-            <div class="modal-body">
+                <div id="myModal" class="modal-mainpage">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <h3>Add New Document</h3>
+                        </div>
+                        <div class="modal-body">
 
-                <!--                <form action="Php/createFile.php" method="get" id="searchForm">-->
-                <form action="Php/addDoc.php" method="post">
+                            <!--                <form action="Php/createFile.php" method="get" id="searchForm">-->
+                            <form action="Php/addDoc.php" method="post">
 
-                    <label>
-                        <input type="text" name="docTitle" id="docTitle">
-                        <div class="label-text">Title</div>
-                    </label>
-                    <br/>
-                    <label>
-                        <div class="label-text">File Type
-                        <select name="extension">
-                            <option>Choose file type...</option>
-                            <option value=".doc">Microsoft Word Document - .doc</option>
-                            <option value=".xlsx">Microsoft Excel Spreadsheet - .xlsx</option>
-                            <option value=".gdoc">Google Docs Document - .gdoc</option>
-                            <option value=".txt">Notepad Text File - .txt</option>
-                            <option value=".html">HTML Script - .HTML</option>
-                            <option value=".css">CSS Script - .CSS</option>
-                            <option value=".php">PHP Script - .PHP</option>
-                            <option value=".sql">SQL Script - .SQL</option>
-                        </select></div>
+                                <label>
+                                    <input type="text" name="docTitle" id="docTitle">
+                                    <div class="label-text">Title</div>
+                                </label>
+                                <br/>
+                                <label>
+                                    <div class="label-text">File Type
+                                        <select name="extension">
+                                            <option>Choose file type...</option>
+                                            <option value=".doc">Microsoft Word Document - .doc</option>
+                                            <option value=".xlsx">Microsoft Excel Spreadsheet - .xlsx</option>
+                                            <option value=".gdoc">Google Docs Document - .gdoc</option>
+                                            <option value=".txt">Notepad Text File - .txt</option>
+                                            <option value=".html">HTML Script - .HTML</option>
+                                            <option value=".css">CSS Script - .CSS</option>
+                                            <option value=".php">PHP Script - .PHP</option>
+                                            <option value=".sql">SQL Script - .SQL</option>
+                                        </select></div>
 
-                        <input type="text" name="comment" id="comment">
-                        <div class="label-text">Brief description of file contents</div>
-                    </label>
+                                    <input type="text" name="comment" id="comment">
+                                    <div class="label-text">Brief description of file contents</div>
+                                </label>
 
-                    <label>
-                        <input type="text" name="authorId" id="authorId">
-                        <div class="label-text">Author ID</div>
-                    </label>
+                                <label>
+                                    <input type="text" name="authorId" id="authorId">
+                                    <div class="label-text">Author ID</div>
+                                </label>
 
-                    <button class="btn medium secondary" type="reset">Reset</button>
-                    <button class="btn medium primary" value="Search" id="search-go">Create File</button>
+                                <button class="btn medium secondary" type="reset">Reset</button>
+                                <button class="btn medium primary" value="Search" id="search-go">Create File</button>
 
 
-                </form>
+                            </form>
 
             </div>
         </div>

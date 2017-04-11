@@ -45,6 +45,9 @@
                     <td> " . "<button class='btn small error'>
                                 <a class='deleteDoc' href=\"Php/deleteDoc.php?documentId=" . $row['id'] . "\"><i class='fa fa-trash'></i></a>
                              </button>" . " </td>
+                    <td> " . "<button class='btn small error'>
+                                <a class='viewRevisions' href=\"Php/viewRevision.php?documentId=" . $row['id'] . "\"><i class=' fa-trash'></i></a>
+                             </button>" . " </td>
                 </tr>
             ";
     }

@@ -20,7 +20,9 @@ $authorId = $_POST['authorId'];
 $comment = $_POST['comment'];
 $fileURL = $_POST['fileUrl'];
 $dire = '../file directory/' . $docTitle . $extn .  '/';
-$t=time();
+$t = date('Y-m-d G:i:s');
+$t1 = time();
+
 $isDraft= 1;
 if( is_dir($dire) === false ) {
 
@@ -40,11 +42,11 @@ if( is_dir($dire) === false ) {
 else {
 
 
-    $file = fopen($dire . '/' . $docTitle . $t . $extn, 'w');
+    $file = fopen($dire . '/' . $docTitle . $t1 . $extn, 'w');
 
     fclose($file);
 
-    $rdire = $dire . $docTitle . $extn .$t;
+    $rdire = $dire . $docTitle .$t . $extn;
     $query2 = "SELECT document.id from document where document.name = '$docTitle'";
     foreach ($conn->query($query2) as $row) {
 
