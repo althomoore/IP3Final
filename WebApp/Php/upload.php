@@ -1,7 +1,7 @@
 <?php
 $target_dir = "../file directory/";
 $target_file = "../file directory/" . basename($_FILES["fileToUpload"]["name"]);
-$target_upload = "../file directory" . '/' . basename($_FILES["fileToUpload"]["name"]);
+$target_upload = "../file directory/" . basename($_FILES["fileToUpload"]["name"]) . '/';
 $fileName= basename($_FILES ["fileToUpload"] ["name"]);
 
 $uploadOk = 1;
@@ -29,9 +29,6 @@ if(isset($_POST["submit"])) {
     }
 
 
-
-
-
 // Check file size
     if ($_FILES["fileToUpload"]["size"] > 500000) {
         echo "Sorry, your file is too large.";
@@ -46,62 +43,61 @@ if(isset($_POST["submit"])) {
         $uploadOk = 0;
     }
 // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
+    if ($uploadOk == 0)
         echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-    } //else {
-    // if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file))
+
+    if (is_dir($dire) === false) {
+        mkdir($dire);
 
 
-    if (is_dir($dire) === false) mkdir($dire);
-
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],"$target_upload")) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-    } else {
-        echo "Sorry, there was an error uploading your file.";
-    }
-}
-
-
-/*
-    if (move_uploaded_file($_FILES['fileToUpload']['tmp_name'], "")) {
-        echo "File is valid, and was successfully uploaded.\n";
-    } else {
-        echo "Upload failed";
-    }
-}
-/*
-            $query = $conn->prepare("INSERT INTO document VALUES('','$authorId','$fileName','','$dire','draft','','')");
-            echo "Executing query...";
-            $query->execute();
-            echo "Query csompleted, data entered to database";
-            $conn = null;
-
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "$dire  $fileName")) {
+            echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
         } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+        $query = $conn->prepare("INSERT INTO document VALUES('','$authorId','$fileName','','$dire','draft','','')");
+        echo "Executing query...";
+        $query->execute();
+        echo "Query csompleted, data entered to database";
+        $conn = null;
 
+    }
+    elseif (is_dir($dire) === true) {
 
-            $file = fopen($dire . '/' . $t . $fileName, 'w');
-
-            fclose($file);
-
-            $rdire = $dire . $fileName . $fileType . $t;
-            $query2 = "SELECT document.id from document where document.name = '$fileName'";
-            foreach ($conn->query($query2) as $row) {
-
-
-                $query = $conn->prepare("INSERT INTO revision VALUES('','{$row['id']}', '$isDraft', '', '$rdire' )");
-                echo "Executing query...";
-                $query->execute();
-
-                echo "Query completed, data entered to database";
-
-            }
-
-            header("Location: ../mainPage.php");
-            $conn = null;
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "$dire $t  $fileName")) {
+            echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
         }
 
- */
+
+    $rdire = $dire . $fileName . $fileType . $t;
+    $query2 = "SELECT document.id from document where document.name = '$fileName'";
+    foreach ($conn->query($query2) as $row) {
+
+
+        $query = $conn->prepare("INSERT INTO revision VALUES('','{$row['id']}', '$isDraft', '$t', '$rdire')");
+        echo "Executing query...";
+        $query->execute();
+
+        echo "Query completed, data entered to database";
+
+
+    }
+    }
+
+
+
+
+
+
+
+
+
+
+    header("Location: ../mainPage.php");
+    $conn = null;
+}
 
 
 ?>
