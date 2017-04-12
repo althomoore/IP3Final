@@ -24,7 +24,7 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
-
+<div class = "Admin">
 <body>   
     <a href="../mainPage.php"><button class="btn medium error">Return</button></a>
     
@@ -139,7 +139,7 @@
             </div>
         </div>
     </div>
-
+</div class = "Admin">
     <script>
         var modal = document.getElementById('myModal');
         var btn = document.getElementById("myBtn");

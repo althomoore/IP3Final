@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 
@@ -128,7 +129,7 @@
                 <!--                <form action="Php/createFile.php" method="get" id="searchForm">-->
                 <form action="Php/addDoc.php" method="post">
 
-                    <?php echo $_SESSION['userId']; ?>
+                   <?php // echo $_SESSION['userId']; ?>
 
                     <label>
                         <input type="text" name="docTitle" id="docTitle">
