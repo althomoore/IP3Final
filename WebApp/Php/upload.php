@@ -47,8 +47,8 @@ if(isset($_POST["submit"])) {
         echo "Sorry, your file was not uploaded.";
 
     if (is_dir($dire) === false) {
-        mkdir($dire);
 
+        mkdir($dire);
 
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "$dire  $fileName")) {
             $query = $conn->prepare("INSERT INTO document VALUES('','$authorId','$fileName','','$dire','draft',CURRENT_TIMESTAMP,'')");
@@ -75,12 +75,12 @@ if(isset($_POST["submit"])) {
 
                 }
             }
+
+            header("Location: ../mainPage.php");
+            $conn = null;
         }
+
     }
 
-    header("Location: ../mainPage.php");
-    $conn = null;
 }
-
-
 ?>
