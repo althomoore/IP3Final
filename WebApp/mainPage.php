@@ -91,6 +91,9 @@
                         <a href="#" id="myBtn"><i class="fa fa-2x fa-plus"></i> Add Document</a>
                     </li>
                     <li>
+                        <a href="#" id="userListBtn"><i class="fa fa-2x fa-plus"></i> Upload Document</a>
+                    </li>
+                    <li>
                         <a href="https://www.ideagen.com/contact-us/"><img src="./Images/Contact.svg">Contact</a>
                     </li>
                     <li>
@@ -135,6 +138,21 @@
                         <input type="text" name="docTitle" id="docTitle">
                         <div class="label-text" autofocus>Title</div>
                     </label>
+                    <form action="Php/addDoc.php" method="post">
+                        <br/>
+                        <label>
+                            <div class="label-text">File Type
+                                <select name="extension">
+                                    <option>Choose file type...</option>
+                                    <option value=".doc">Microsoft Word Document - .doc</option>
+                                    <option value=".xlsx">Microsoft Excel Spreadsheet - .xlsx</option>
+                                    <option value=".gdoc">Google Docs Document - .gdoc</option>
+                                    <option value=".txt">Notepad Text File - .txt</option>
+                                    <option value=".html">HTML Script - .HTML</option>
+                                    <option value=".css">CSS Script - .CSS</option>
+                                    <option value=".php">PHP Script - .PHP</option>
+                                    <option value=".sql">SQL Script - .SQL</option>
+                                </select></div>
                     <label for="comment">Comment</label>
                     <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
                     <label>
@@ -149,7 +167,24 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="Javascript/modal.js"></script>
+    <div id="userList" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Upload</h2>
+            </div>
+            <div class="modal-body">
+
+                <form action="Php/upload.php" method="post" enctype="multipart/form-data">
+                    Select file to upload:
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="submit" value="Upload Document" name="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!--    <script type="text/javascript" src="Javascript/modal.js"></script>-->
 </div>
 
 
@@ -198,17 +233,34 @@
 
 </script>
 <script>
-    btn.onclick = function () {
+    var modal = document.getElementById('myModal');
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+
+    var modal2 = document.getElementById('userList');
+    var btn2 = document.getElementById('userListBtn');
+    var span2 = document.getElementsByClassName("close")[1];
+
+    btn.onclick = function() {
         modal.style.display = "block";
     }
-
-    span.onclick = function () {
-        modal.style.display = "none";
+    btn2.onclick = function() {
+        modal2.style.display = "block";
     }
 
-    window.onclick = function (event) {
-        if (event.target === modal) {
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    span2.onclick = function() {
+        modal2.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
             modal.style.display = "none";
+        }
+        if (event.target == modal2) {
+            modal2.style.display = "none";
         }
     }
 
