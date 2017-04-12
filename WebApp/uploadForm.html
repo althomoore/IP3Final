@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="Php/upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Document" name="submit">
+</form>
+
+<section>
+    <?php include 'Php/docTable.php'; ?>
+</section>
+
+
+
+
+</body>
+</html>
