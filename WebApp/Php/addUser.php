@@ -28,8 +28,9 @@
     $userEmail = $_POST['email'];
     $userUserName = $_POST['username'];
     $userPassword = $_POST['password'];
+    $isAdmin = $_POST['isAdminFrom'];
     
-    $query=$conn->prepare("INSERT INTO user VALUES('','$userName','$userSurname','$userEmail','$userUserName','$userPassword','1','1','')");
+    $query=$conn->prepare("INSERT INTO user VALUES('','$userName','$userSurname','$userEmail','$userUserName','$userPassword','1','$isAdmin','')");
     $query->execute();
     $conn = null;
     header('Location: ./admin.php');

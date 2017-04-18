@@ -1,31 +1,71 @@
-    <?php
-    
-    define("DB_USER", "root");
-        define("DB_PASS", "");
-        $servername = "localhost";
-        $dbname = "mydb";
+<?php
+include 'connection.php';
 
-        session_start();
-    
-        try {
-            $conn=new PDO("mysql:host=$servername;dbname=$dbname",DB_USER, DB_PASS);
-            $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            //echo DB_USER . " is connected to " . $dbname;
-        } catch(PDOException $e) {
-            //echo "Connection Failed: " . $e -> getMessage();
+session_start();
+
+
+$extn = $_POST['extension'];
+$docTitle = $_POST['docTitle'];
+//$authorId = $_POST['authorId'];
+$comment = $_POST['comment'];
+//$fileURL = $_POST['fileUrl'];
+$dire = '../file directory/' . $docTitle . $extn . '/';
+$t = date('Y-m-d G:i:s');
+
+
+$t1 = time();
+
+$isDraft = 1;
+if (is_dir($dire) === false) {
+
+    mkdir($dire);
+
+
+    $file = fopen($dire . '/' . $docTitle . $extn, 'w');
+
+    fclose($file);
+
+    $query = $conn->prepare(/** @lang sql */
+        "INSERT INTO document VALUES('','{$_SESSION['userId']}','$docTitle','$comment','$dire','draft',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)");
+    echo "Executing query... <br>";
+    $query->execute();
+    echo "Query completed, data entered to database <br>";
+    $conn = null;
+} else {
+
+//CHANGE IS HERE
+    $i = 0;
+    $dir = $dire;
+    if ($handle = opendir($dir)) {
+        while (($file = readdir($handle)) !== false) {
+            if (!in_array($file, array('.', '..')) && !is_dir($dir . $file))
+                $i++;
         }
+    }
+    echo "FileURL: " . $fileURL . "<br>";
+    echo "count: " . $i . "<br>";
 
-        $docTitle = $_POST['docTitle'];
-        //$authorId = $_POST['authorId'];
-        $comment = $_POST['comment'];
-        $fileURL = $_POST['fileUrl'];
-        
-        echo "All data has been recieved from the form";
-        
-        $query=$conn->prepare("INSERT INTO document VALUES('','{$_SESSION['userId']}','$docTitle','$comment','$fileURL','draft',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)");
-        echo "Executing query...";
+    $file = fopen($dire . '/' . $docTitle . $i . $extn, 'w');
+
+    fclose($file);
+
+
+    $rdire = $dire . $docTitle . $i . $extn;
+    $query2 = /** @lang sql */
+        "SELECT document.id from document where document.name = '$docTitle'";
+    foreach ($conn->query($query2) as $row) {
+
+
+        $query = $conn->prepare(/** @lang sql */
+            "INSERT INTO revision VALUES('','{$row['id']}', '$isDraft', CURRENT_TIMESTAMP, '$rdire' )");
+        echo "Executing query... with: " . $row['id'] . "...<br>";
         $query->execute();
-        echo "Query completed, data entered to database";
-        $conn = null;
-        header("Location: ../mainPage.php");
-?>
+
+        //echo "Query completed, data entered to database <br>";
+
+    }
+    $conn = null;
+}
+
+
+header("Location: ../mainPage.php");

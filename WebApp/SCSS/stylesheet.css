@@ -4,7 +4,6 @@
     border-radius: 2px;
 }
 
-
 /* line 8, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
 .tiny {
@@ -13,7 +12,6 @@
     height: 24px;
     font-size: 10px;
 }
-
 
 /* line 14, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
@@ -24,7 +22,6 @@
     font-size: 12px;
 }
 
-
 /* line 20, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
 .medium {
@@ -33,7 +30,6 @@
     height: 37px;
     font-size: 14px;
 }
-
 
 /* line 26, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
@@ -44,7 +40,6 @@
     font-size: 16px;
 }
 
-
 /* line 32, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
 .big {
@@ -53,7 +48,6 @@
     height: 50px;
     font-size: 18px;
 }
-
 
 /* line 38, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
@@ -64,7 +58,6 @@
     font-size: 21px;
 }
 
-
 /* line 44, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
 .massive {
@@ -74,7 +67,6 @@
     font-size: 24px;
 }
 
-
 /* line 53, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
 .primary {
@@ -83,7 +75,6 @@
     border: 1px solid #18aee0;
 }
 
-
 /* line 59, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
 .primary:hover {
@@ -91,14 +82,12 @@
     border: 1px solid #2fb6e3;
 }
 
-
 /* line 64, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
 .primary:active,
 .primary:focus {
     border: 1px solid #138bb3;
 }
-
 
 /* line 68, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
@@ -108,13 +97,11 @@
     border: 1px solid #18aee0;
 }
 
-
 /* line 74, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
 .secondary:hover {
     background-color: #f3f4f5;
 }
-
 
 /* line 78, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
@@ -122,7 +109,6 @@
 .secondary:focus {
     border: 1px solid #cccccc;
 }
-
 
 /* line 83, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
@@ -132,7 +118,6 @@
     border: 1px solid #f22929;
 }
 
-
 /* line 89, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
 .error:hover {
@@ -140,14 +125,12 @@
     border: 1px solid #f33e3e;
 }
 
-
 /* line 94, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
 .error:active,
 .error:focus {
     border: 1px solid #c22121;
 }
-
 
 /* line 98, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
@@ -157,7 +140,6 @@
     border: 1px solid #ff8400;
 }
 
-
 /* line 104, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
 .warning:hover {
@@ -165,14 +147,12 @@
     border: 1px solid #ff901a;
 }
 
-
 /* line 109, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
 .warning:active,
 .warning:focus {
     border: 1px solid #cc6a00;
 }
-
 
 /* line 114, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
@@ -182,14 +162,12 @@
     border: 1px solid #54c600;
 }
 
-
 /* line 120, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
 .success:hover {
     background-color: #65cc1a;
     border: 1px solid #65cc1a;
 }
-
 
 /* line 125, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_buttons.scss */
 
@@ -207,7 +185,6 @@ ul {
     overflow: hidden;
 }
 
-
 /* line 18, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_navigation.scss */
 
 li a {
@@ -222,7 +199,6 @@ li a {
     transition: all .3s ease-in;
 }
 
-
 /* line 29, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_navigation.scss */
 
 li a img {
@@ -232,14 +208,12 @@ li a img {
     vertical-align: bottom;
 }
 
-
 /* line 35, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_navigation.scss */
 
 li a:hover {
     background-color: #593B39;
     border-left: 5px solid #BF3944;
 }
-
 
 /* line 40, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_navigation.scss */
 
@@ -318,7 +292,6 @@ img.username {
     float: left;
 }
 
-
 /* line 84, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_navigation.scss */
 
 div.username {
@@ -328,7 +301,6 @@ div.username {
     display: block;
     text-align: left;
 }
-
 
 /* line 92, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_navigation.scss */
 
@@ -340,21 +312,18 @@ div.usernameimage {
     padding-right: 15px;
 }
 
-
 /* line 100, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/partials/_navigation.scss */
 
 .username h3 {
     color: white;
 }
 
-
 /* line 13, C:/Users/wbrett200/Desktop/IP3Project-master/webApp/SCSS/stylesheet.scss */
 
 body {
-    padding: 0px;
+    padding: 0;
     margin: 10px;
 }
-
 
 /* Dropdown Content (Hidden by Default) */
 
@@ -380,16 +349,14 @@ body {
 
 .btnArrow {
     color: #fff !important;
-    padding-right: 0px !important;
+    padding-right: 0 !important;
 }
-
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 
 .show {
     display: block;
 }
-
 
 /* Table Content */
 
@@ -499,7 +466,7 @@ select {
 }
 
 .fa-trash {
-    color: #c61c18;
+    color: white;
 }
 
 .deleteDoc {
@@ -558,9 +525,9 @@ h6 {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
-    left: 0px;
+    left: 0;
     padding: 0;
     margin: 0;
     width: 100%;
@@ -577,10 +544,6 @@ h6 {
 .dropdown-content a:nth-child(1) {
     color: #fff;
     background-color: #18aee0;
-}
-
-.dropdown-content a:nth-child(5) {
-    color: #c61c18;
 }
 
 .dropdown-content a:hover {
@@ -605,21 +568,22 @@ nav {
 
 section {
     float: left;
-    padding: 0 0 10px 70px;
-    width: 91%;
+    padding: 0 30px 10px 30px;
+    width: 95%;
 }
 
 header {
     float: left;
-    padding: 5px 30px 10px 30px;
-    width: 90.5%;
+    padding: 0 70px 0 30px;
+    width: 95%;
     background-color: #F2F2F2;
+    right: 0;
 }
 
 .logo {
     float: left;
-    padding-top: 15px;
-    padding-right: 30px;
+    padding-top: 10px;
+
     height: 75px;
     width: 18%;
     display: flex;
@@ -633,7 +597,7 @@ header {
 
 .headSearch {
     float: left;
-    width: 50%;
+    width: 20%;
     padding: 20px 30px 0 30px;
     font-family: 'Open Sans', sans-serif;
     height: 75px;
@@ -644,16 +608,16 @@ header {
     float: right;
     width: 25%;
     text-align: right;
-    padding-top: 20px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+
     font-family: 'Open Sans', sans-serif;
     height: 75px;
-    color: #18AEE0;
+    color: #0A3254;
 }
 
 .authortoggle {
     float: left;
-    width: 80%;
+    width: 40%;
     color: #0a3254;
     font-family: 'Open Sans', sans-serif;
     padding-left: 30px;
@@ -662,13 +626,56 @@ header {
 .togglebutton {
     float: right;
     vertical-align: middle;
-    padding: 10px 30px 10px 0;
+    padding: 10px 0 10px 0;
+}
+
+.toggletext {
+    float: left;
+    vertical-align: middle;
+    padding: 10px 0 10px 0;
+    width: 50%;
+}
+
+.search {
+    float: left;
+    width: 35%;
+    color: #0a3254;
+    font-family: 'Open Sans', sans-serif;
+    padding-right: 30px;
+}
+
+.authorcontain {
+    width: 100%;
+    padding: 5px 0 3px 0;
 }
 
 .docowner {
 
     font-weight: bold;
 }
+
+ul li .logout {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+
+    background-color: #4c5c63;
+
+    color: white;
+    text-align: left;
+    padding: 20px;
+    text-decoration: none;
+
+    border-left: 0 solid #1A2426;
+    -webkit-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+
+}
+
+.center {
+    padding: 10px 30px 10px 0;
+}
+
+
 
 
 

@@ -11,23 +11,26 @@
     <link rel="stylesheet" href="SCSS/partials/testing.css">
 </head>
 
-<body>
+<body class="body">
+<div class="logposition">
+
     <div class="login-container">
         <section class="login" id="login">
             <header>
-                <h2><img src="images/logo-ideagen-corp.svg" alt=""></h2>
+                <h2><img src="Images/ideagen-logo-white.png" alt="Ideagen Logo"></h2>
+                <h4>WELCOME TO IDEAGEN</h4>
                 <h4>Login to access your documents</h4>
             </header>
-            <form class="login-form" action="php/loginUser.php" method="post">
+            <form class="login-form" action="./PHP/loginUser.php" method="post">
                 <label>
-                <input type="text" name="username" id="username" autofocus>
-                <div class="label-text">Username</div>
-            </label>
+                    <input class="input-pad" type="text" name="username" id="username" autofocus>
+                    <div class="label-text">Username</div>
+                </label>
 
                 <label>
-                <input type="password" name="password_hash" id="password_hash">
-                <div class="label-text">Password</div>
-            </label>
+                    <input type="password" name="password_hash" id="password_hash">
+                    <div class="label-text">Password</div>
+                </label>
                 <div class="submit-container">
                     <div class="sub-container">
                         <button class="btn medium secondary">Forgot Password?</button>
@@ -39,6 +42,10 @@
             </form>
         </section>
     </div>
+
+</div>
+
 </body>
+
 
 </html>

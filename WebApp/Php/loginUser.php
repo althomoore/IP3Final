@@ -53,7 +53,7 @@
         else if($userUsername = 'username' and $userPassword = 'password_hash' and $row['isAdmin'] == '0')
         {
             $role = 'user';
-            $_SESSION['role'] = user;
+            $_SESSION['role'] = $role;
             $_SESSION['userId'] = $row['id'];
             header('Location: ../mainPage.php');
         } else {

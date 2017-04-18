@@ -35,9 +35,6 @@
 
     ?></div>
 
-<label>
-    <input type="text" id="myInput" onkeyup="searchTable(), searchTable2()">
-    <div class="label-text">Search</div>
-</label>
+
 
 </body>

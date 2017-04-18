@@ -2,8 +2,8 @@
 
 @keyframes scale_header {
     0% {
-        max-height: 0px;
-        margin-bottom: 0px;
+        max-height: 0;
+        margin-bottom: 0;
         opacity: 0;
     }
     100% {
@@ -53,16 +53,27 @@
     }
 }
 
-
 /* Login Form */
+
+.body {
+    background-color: #8BB6E3;
+}
+
+.logposition {
+    position: absolute;
+    top: 2%;
+    left: 30%;
+    right: -30%;
+    margin: auto;
+}
 
 .login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 340px;
+    width: 40%;
     height: auto;
-    padding: 5px;
+    padding: 50px;
     box-sizing: border-box;
 }
 
@@ -84,47 +95,27 @@
 
 .login {
     position: relative;
-    width: 100%;
     padding: 10px;
     margin: 0 0 10px 0;
-    box-sizing: border-box;
-    border-radius: 3px;
-    background: #FAFAFA;
     overflow: hidden;
+    box-sizing: border-box;
+    background: #FAFAFA;
     animation: input_opacity 0.2s cubic-bezier(.55, 0, .1, 1);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
 .login > header {
     position: relative;
-    width: 100%;
-    padding: 10px;
+    padding: 0 30px 0 30px;
+    overflow: hidden;
     margin: -10px -10px 25px -10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    background: #1A2426;
+    background: #0a3254;
     font-family: 'Roboto', sans-serif;
     font-size: 1.3rem;
     color: #FAFAFA;
     animation: scale_header 0.6s cubic-bezier(.55, 0, .1, 1), text_opacity 1s cubic-bezier(.55, 0, .1, 1);
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12), 0px 3px 1px -2px rgba(0, 0, 0, 0.2);
-}
-
-.login > header:before {
-    content: '';
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    height: 5px;
-    padding: 10px;
-    margin: -10px 0 0 -10px;
-    box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.156);
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.9rem;
-    color: transparent;
-    z-index: 5;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
 .login.error_1 > header:before,
@@ -147,9 +138,8 @@
 .login > header h4 {
     font-size: 0.7em;
     animation: text_opacity 1.5s cubic-bezier(.55, 0, .1, 1);
-    color: rgba(255, 255, 255, 0.4);
+    color: white;
 }
-
 
 /* Form */
 
@@ -158,13 +148,12 @@
     box-sizing: border-box;
 }
 
-
 /* Inputs */
 
 .login-input {
     position: relative;
     width: 100%;
-    padding: 10px 5px;
+    padding: 10px 50px;
     margin: 0 0 25px 0;
     border: none;
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
@@ -178,11 +167,14 @@
     transition: border-bottom 0.2s cubic-bezier(.55, 0, .1, 1);
 }
 
+.input-pad {
+    padding-top: 30px;
+}
+
 .login-input:focus {
     outline: none;
     border-bottom: 2px solid #18aee0;
 }
-
 
 /* Submit Button */
 
@@ -194,6 +186,8 @@
     padding: 10px;
     margin: 35px -25px -25px -25px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #D0D6DA;
+
 }
 
 a {
